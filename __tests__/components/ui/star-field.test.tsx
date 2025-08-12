@@ -18,10 +18,14 @@ jest.mock("framer-motion", () => ({
 
 describe("StarField", () => {
   it("renders with default props", () => {
-    render(<StarField />);
+    const { container } = render(<StarField />);
 
-    const container = screen.getByRole("generic");
-    expect(container).toHaveClass("absolute", "inset-0", "overflow-hidden");
+    const starFieldContainer = container.firstChild as HTMLElement;
+    expect(starFieldContainer).toHaveClass(
+      "absolute",
+      "inset-0",
+      "overflow-hidden"
+    );
   });
 
   it("renders the correct number of stars", () => {
@@ -34,10 +38,10 @@ describe("StarField", () => {
 
   it("applies custom className", () => {
     const customClass = "custom-star-field";
-    render(<StarField className={customClass} />);
+    const { container } = render(<StarField className={customClass} />);
 
-    const container = screen.getByRole("generic");
-    expect(container).toHaveClass(customClass);
+    const starFieldContainer = container.firstChild as HTMLElement;
+    expect(starFieldContainer).toHaveClass(customClass);
   });
 
   it("generates stars with random positions", () => {
@@ -91,10 +95,10 @@ describe("StarField", () => {
   });
 
   it("handles zero count gracefully", () => {
-    render(<StarField count={0} />);
+    const { container } = render(<StarField count={0} />);
 
-    const container = screen.getByRole("generic");
-    expect(container).toBeInTheDocument();
+    const starFieldContainer = container.firstChild as HTMLElement;
+    expect(starFieldContainer).toBeInTheDocument();
 
     const stars = screen.queryAllByTestId("motion-div");
     expect(stars).toHaveLength(0);
