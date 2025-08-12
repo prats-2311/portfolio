@@ -15,7 +15,7 @@
   - Add utility types for component props and common patterns
   - _Requirements: 2.2, 6.3_
 
-- [ ] 3. Create utility functions and helper modules
+- [x] 3. Create utility functions and helper modules
 
   - Extract cn() utility function to lib/utils.ts
   - Create data files in lib/data/ for projects, skills, experience, blogs, and hackathons
@@ -23,7 +23,7 @@
   - _Requirements: 3.3, 6.1, 6.4_
 
 - [ ] 4. Build core UI components
-- [ ] 4.1 Create ThemeToggle component
+- [x] 4.1 Create ThemeToggle component
 
   - Extract ThemeToggle component to components/ui/theme-toggle.tsx
   - Implement proper TypeScript interfaces and state management
@@ -39,8 +39,8 @@
   - Write unit tests for pattern generation
   - _Requirements: 2.1, 2.2_
 
-- [ ] 5. Build background animation components
-- [ ] 5.1 Create StarField component
+- [-] 5. Build background animation components
+- [-] 5.1 Create StarField component
 
   - Extract StarField component to components/ui/star-field.tsx
   - Implement Framer Motion animations for stars

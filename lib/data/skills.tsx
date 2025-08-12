@@ -1,3 +1,4 @@
+import React from "react";
 import { SkillCategory } from "@/types";
 import { validateSkillCategory } from "@/lib/validation";
 import {
@@ -14,7 +15,7 @@ import {
 // Sample skills data - replace with actual skills
 export const skillsData: SkillCategory[] = [
   {
-    icon: Code2,
+    icon: <Code2 className="w-8 h-8" />,
     title: "Frontend Development",
     description:
       "Building responsive and interactive user interfaces with modern frameworks and libraries.",
@@ -32,7 +33,7 @@ export const skillsData: SkillCategory[] = [
     ],
   },
   {
-    icon: Server,
+    icon: <Server className="w-8 h-8" />,
     title: "Backend Development",
     description:
       "Creating robust server-side applications and APIs with various technologies and frameworks.",
@@ -50,7 +51,7 @@ export const skillsData: SkillCategory[] = [
     ],
   },
   {
-    icon: Database,
+    icon: <Database className="w-8 h-8" />,
     title: "Database & Storage",
     description:
       "Designing and managing databases, data modeling, and implementing efficient storage solutions.",
@@ -68,7 +69,7 @@ export const skillsData: SkillCategory[] = [
     ],
   },
   {
-    icon: Cloud,
+    icon: <Cloud className="w-8 h-8" />,
     title: "Cloud & DevOps",
     description:
       "Deploying and managing applications in cloud environments with modern DevOps practices.",
@@ -86,7 +87,7 @@ export const skillsData: SkillCategory[] = [
     ],
   },
   {
-    icon: Smartphone,
+    icon: <Smartphone className="w-8 h-8" />,
     title: "Mobile Development",
     description:
       "Building cross-platform mobile applications with native performance and user experience.",
@@ -104,7 +105,7 @@ export const skillsData: SkillCategory[] = [
     ],
   },
   {
-    icon: Brain,
+    icon: <Brain className="w-8 h-8" />,
     title: "AI & Machine Learning",
     description:
       "Implementing intelligent solutions using machine learning algorithms and AI technologies.",
@@ -122,7 +123,7 @@ export const skillsData: SkillCategory[] = [
     ],
   },
   {
-    icon: Palette,
+    icon: <Palette className="w-8 h-8" />,
     title: "UI/UX Design",
     description:
       "Creating intuitive and visually appealing user interfaces with focus on user experience.",
@@ -140,7 +141,7 @@ export const skillsData: SkillCategory[] = [
     ],
   },
   {
-    icon: Wrench,
+    icon: <Wrench className="w-8 h-8" />,
     title: "Tools & Workflow",
     description:
       "Utilizing modern development tools and maintaining efficient workflows for productivity.",

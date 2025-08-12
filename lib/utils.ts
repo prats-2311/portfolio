@@ -222,3 +222,153 @@ export const handleError = (error: unknown, context?: string): void => {
     console.warn("An error occurred:", fullMessage);
   }
 };
+// Portfolio-specific utility functions
+export const getImagePath = (imagePath: string): string => {
+  // Ensure image path starts with /
+  return imagePath.startsWith("/") ? imagePath : `/${imagePath}`;
+};
+
+// Format technology tags for display
+export const formatTechTags = (techs: string[]): string => {
+  if (techs.length === 0) return "";
+  if (techs.length === 1) return techs[0];
+  if (techs.length === 2) return techs.join(" and ");
+
+  const lastTech = techs[techs.length - 1];
+  const otherTechs = techs.slice(0, -1);
+  return `${otherTechs.join(", ")}, and ${lastTech}`;
+};
+
+// Calculate reading time for content
+export const calculateReadingTime = (
+  content: string,
+  wordsPerMinute: number = 200
+): string => {
+  const words = content.trim().split(/\s+/).length;
+  const minutes = Math.ceil(words / wordsPerMinute);
+  return `${minutes} min read`;
+};
+
+// Smooth scroll to element
+export const smoothScrollTo = (elementId: string, offset: number = 0): void => {
+  if (!isBrowser()) return;
+
+  const element = document.getElementById(elementId);
+  if (element) {
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  }
+};
+
+// Copy text to clipboard
+export const copyToClipboard = async (text: string): Promise<boolean> => {
+  if (!isBrowser()) return false;
+
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch (error) {
+    // Fallback for older browsers
+    try {
+      const textArea = document.createElement("textarea");
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textArea);
+      return true;
+    } catch (fallbackError) {
+      console.warn("Failed to copy to clipboard:", fallbackError);
+      return false;
+    }
+  }
+};
+
+// Download file utility
+export const downloadFile = (url: string, filename?: string): void => {
+  if (!isBrowser()) return;
+
+  const link = document.createElement("a");
+  link.href = url;
+  if (filename) {
+    link.download = filename;
+  }
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
+// Format file size
+export const formatFileSize = (bytes: number): string => {
+  if (bytes === 0) return "0 Bytes";
+
+  const k = 1024;
+  const sizes = ["Bytes", "KB", "MB", "GB"];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+};
+
+// Color utilities
+export const hexToRgb = (
+  hex: string
+): { r: number; g: number; b: number } | null => {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result
+    ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16),
+      }
+    : null;
+};
+
+export const rgbToHex = (r: number, g: number, b: number): string => {
+  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+};
+
+// Random utilities
+export const getRandomElement = <T>(array: T[]): T => {
+  return array[Math.floor(Math.random() * array.length)];
+};
+
+export const getRandomElements = <T>(array: T[], count: number): T[] => {
+  const shuffled = arrayUtils.shuffle([...array]);
+  return shuffled.slice(0, Math.min(count, array.length));
+};
+
+// Animation utilities
+export const easeInOutCubic = (t: number): number => {
+  return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+};
+
+export const lerp = (start: number, end: number, factor: number): number => {
+  return start + (end - start) * factor;
+};
+
+// Device detection
+export const getDeviceType = (): "mobile" | "tablet" | "desktop" => {
+  if (!isBrowser()) return "desktop";
+
+  const width = window.innerWidth;
+  if (width < 768) return "mobile";
+  if (width < 1024) return "tablet";
+  return "desktop";
+};
+
+export const isMobile = (): boolean => {
+  return getDeviceType() === "mobile";
+};
+
+export const isTablet = (): boolean => {
+  return getDeviceType() === "tablet";
+};
+
+export const isDesktop = (): boolean => {
+  return getDeviceType() === "desktop";
+};
