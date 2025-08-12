@@ -4,6 +4,7 @@ import {
   Project,
   SkillCategory,
   Experience,
+  Education,
   BlogPost,
   Hackathon,
   ContactFormData,
@@ -53,6 +54,20 @@ export const validateExperience = (
   if (!experience.period?.trim()) return "Period is required";
   if (!experience.location?.trim()) return "Location is required";
   if (!experience.description?.length)
+    return "At least one description point is required";
+
+  return null;
+};
+
+// Education validation
+export const validateEducation = (
+  education: Partial<Education>
+): string | null => {
+  if (!education.institution?.trim()) return "Institution name is required";
+  if (!education.degree?.trim()) return "Degree is required";
+  if (!education.period?.trim()) return "Period is required";
+  if (!education.location?.trim()) return "Location is required";
+  if (!education.description?.length)
     return "At least one description point is required";
 
   return null;

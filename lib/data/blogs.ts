@@ -1,87 +1,87 @@
 import { BlogPost } from "@/types";
 import { validateBlogPost } from "@/lib/validation";
 
-// Sample blog posts data - replace with actual blog posts
+// Technical blog posts based on Prateek Srivastava's expertise and projects
 export const blogsData: BlogPost[] = [
   {
-    title: "Building Scalable React Applications with TypeScript",
+    title: "Building AI-Powered Educational Platforms: Lessons from cseCatalyst",
     excerpt:
-      "Learn how to structure large React applications using TypeScript, best practices for component architecture, and strategies for maintaining code quality as your project grows.",
+      "Deep dive into creating scalable educational technology platforms with AI integration. Learn about implementing multi-language support, real-time content processing, and building community features for millions of users. Covers architecture decisions, database design with Supabase, and integrating Google Cloud APIs for translation and text-to-speech.",
     date: "2024-01-15",
-    readTime: "8 min read",
-    tags: ["React", "TypeScript", "Architecture", "Best Practices"],
-    image: "/images/blogs/react-typescript.jpg",
-    link: "https://medium.com/@username/building-scalable-react-applications",
-  },
-  {
-    title: "The Complete Guide to Next.js App Router",
-    excerpt:
-      "Explore the new App Router in Next.js 13+, including server components, streaming, and how to migrate from the Pages Router. Complete with practical examples and performance tips.",
-    date: "2024-01-08",
     readTime: "12 min read",
-    tags: ["Next.js", "React", "Server Components", "Performance"],
-    image: "/images/blogs/nextjs-app-router.jpg",
-    link: "https://dev.to/username/complete-guide-nextjs-app-router",
+    tags: ["React", "AI", "Education Tech", "Supabase", "Google Cloud"],
+    image: "/images/blogs/ai-educational-platforms.jpg",
+    link: "https://medium.com/@prateek.srivastava2311/building-ai-powered-educational-platforms",
   },
   {
-    title: "Mastering CSS Grid and Flexbox for Modern Layouts",
+    title: "Implementing Real-Time Climate Visualization with Google Earth Engine",
     excerpt:
-      "A comprehensive guide to creating responsive layouts using CSS Grid and Flexbox. Learn when to use each approach and how to combine them effectively.",
-    date: "2023-12-22",
-    readTime: "10 min read",
-    tags: ["CSS", "Grid", "Flexbox", "Responsive Design"],
-    image: "/images/blogs/css-grid-flexbox.jpg",
-    link: "https://css-tricks.com/author/username/mastering-css-layouts",
-  },
-  {
-    title: "Database Design Patterns for Modern Web Applications",
-    excerpt:
-      "Explore common database design patterns, normalization strategies, and how to choose the right database for your application. Includes examples with PostgreSQL and MongoDB.",
-    date: "2023-12-10",
+      "Comprehensive guide to building global climate visualization platforms using Google Earth Engine, TensorFlow.js for predictive modeling, and creating adaptive algorithms that work across different climate zones. Includes performance optimization techniques for processing 40+ years of worldwide climate data in real-time.",
+    date: "2024-01-08",
     readTime: "15 min read",
-    tags: ["Database", "PostgreSQL", "MongoDB", "Design Patterns"],
-    image: "/images/blogs/database-design.jpg",
-    link: "https://hashnode.com/@username/database-design-patterns",
+    tags: ["Google Earth Engine", "TensorFlow.js", "Climate Data", "Visualization", "JavaScript"],
+    image: "/images/blogs/climate-visualization.jpg",
+    link: "https://dev.to/prateek2311/implementing-real-time-climate-visualization",
   },
   {
-    title: "Implementing Authentication in Next.js with NextAuth.js",
+    title: "Healthcare Technology: Building HIPAA-Compliant Blood Donation Platforms",
     excerpt:
-      "Step-by-step guide to implementing secure authentication in Next.js applications using NextAuth.js. Covers OAuth providers, JWT tokens, and session management.",
-    date: "2023-11-28",
+      "Learn how to develop secure healthcare applications with real-time donor-patient matching, geolocation services, and AI-powered medical guidance. Covers implementing WebSocket communication, ensuring data privacy compliance, and creating gamified user experiences for critical healthcare applications.",
+    date: "2023-12-22",
     readTime: "11 min read",
-    tags: ["Next.js", "Authentication", "Security", "NextAuth.js"],
-    image: "/images/blogs/nextjs-auth.jpg",
-    link: "https://blog.username.com/nextjs-authentication-guide",
+    tags: ["Healthcare Tech", "React", "WebSocket", "Geolocation", "Security"],
+    image: "/images/blogs/healthcare-platforms.jpg",
+    link: "https://hashnode.com/@prateek2311/healthcare-technology-blood-donation-platforms",
   },
   {
-    title: "Optimizing React Performance: A Developer's Guide",
+    title: "Optimizing Graph Algorithms: Artificial Bee Colony for Network Problems",
     excerpt:
-      "Learn advanced techniques for optimizing React application performance, including memoization, code splitting, lazy loading, and profiling tools.",
+      "Research-based exploration of metaheuristic algorithms for solving complex network optimization problems. Deep dive into implementing Artificial Bee Colony Algorithm in C/C++, achieving 93% time complexity reduction, and practical applications in electricity distribution networks.",
+    date: "2023-12-10",
+    readTime: "18 min read",
+    tags: ["Algorithms", "C++", "Graph Theory", "Optimization", "Research"],
+    image: "/images/blogs/graph-algorithms.jpg",
+    link: "https://towardsdatascience.com/@prateek2311/optimizing-graph-algorithms-abc",
+  },
+  {
+    title: "Full-Stack Development with MERN Stack: From Concept to Deployment",
+    excerpt:
+      "Complete guide to building production-ready applications using MongoDB, Express.js, React, and Node.js. Covers project architecture, authentication implementation, database design, and deployment strategies. Includes real-world examples from YelpCamp project development.",
+    date: "2023-11-28",
+    readTime: "16 min read",
+    tags: ["MERN Stack", "MongoDB", "Express", "React", "Node.js"],
+    image: "/images/blogs/mern-stack-guide.jpg",
+    link: "https://blog.prateek2311.com/mern-stack-development-guide",
+  },
+  {
+    title: "Supabase vs Traditional Backend: Modern Database Solutions",
+    excerpt:
+      "Comprehensive comparison of Supabase with traditional backend solutions. Learn about Row Level Security, Edge Functions, real-time subscriptions, and when to choose Supabase for your next project. Includes migration strategies and performance considerations.",
     date: "2023-11-15",
-    readTime: "9 min read",
-    tags: ["React", "Performance", "Optimization", "Profiling"],
-    image: "/images/blogs/react-performance.jpg",
-    link: "https://medium.com/@username/optimizing-react-performance",
-  },
-  {
-    title: "Building RESTful APIs with Node.js and Express",
-    excerpt:
-      "Complete tutorial on creating robust RESTful APIs using Node.js and Express. Covers middleware, error handling, validation, and API documentation.",
-    date: "2023-10-30",
     readTime: "13 min read",
-    tags: ["Node.js", "Express", "API", "Backend"],
-    image: "/images/blogs/nodejs-express-api.jpg",
-    link: "https://dev.to/username/building-restful-apis-nodejs-express",
+    tags: ["Supabase", "PostgreSQL", "Backend", "Database", "Real-time"],
+    image: "/images/blogs/supabase-guide.jpg",
+    link: "https://medium.com/@prateek.srivastava2311/supabase-vs-traditional-backend",
   },
   {
-    title: "Introduction to Machine Learning with Python",
+    title: "Building Scalable Community Platforms: Forums and User Engagement",
     excerpt:
-      "Get started with machine learning using Python. Learn about data preprocessing, model training, and evaluation using popular libraries like scikit-learn and pandas.",
-    date: "2023-10-12",
+      "Learn how to create engaging community features with discussion forums, user roles, content moderation, and gamification. Covers implementing threaded conversations, notification systems, and building sustainable community ecosystems for educational platforms.",
+    date: "2023-10-30",
     readTime: "14 min read",
-    tags: ["Python", "Machine Learning", "Data Science", "AI"],
-    image: "/images/blogs/ml-python.jpg",
-    link: "https://towardsdatascience.com/@username/intro-ml-python",
+    tags: ["Community Building", "Forums", "User Engagement", "Gamification"],
+    image: "/images/blogs/community-platforms.jpg",
+    link: "https://dev.to/prateek2311/building-scalable-community-platforms",
+  },
+  {
+    title: "Modern Web Development: TypeScript, Tailwind CSS, and Performance",
+    excerpt:
+      "Best practices for modern web development using TypeScript for type safety, Tailwind CSS for rapid styling, and performance optimization techniques. Includes code splitting, lazy loading, and creating responsive designs that work across all devices.",
+    date: "2023-10-12",
+    readTime: "10 min read",
+    tags: ["TypeScript", "Tailwind CSS", "Performance", "Web Development"],
+    image: "/images/blogs/modern-web-dev.jpg",
+    link: "https://css-tricks.com/author/prateek2311/modern-web-development",
   },
 ];
 

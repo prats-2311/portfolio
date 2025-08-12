@@ -103,7 +103,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-muted-foreground text-sm">
-              © 2024 John Doe. All rights reserved.
+              © 2024 Prateek Srivastava. All rights reserved.
             </div>
             <div className="text-muted-foreground text-sm">
               Built with Next.js, TypeScript, and Tailwind CSS

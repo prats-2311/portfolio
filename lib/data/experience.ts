@@ -1,71 +1,30 @@
 import { Experience } from "@/types";
 import { validateExperience } from "@/lib/validation";
 
-// Sample experience data - replace with actual work experience
+// Work experience data based on Prateek Srivastava's resume
 export const experienceData: Experience[] = [
   {
-    company: "Tech Innovations Inc.",
-    role: "Senior Full Stack Developer",
-    period: "2022 - Present",
-    location: "San Francisco, CA (Remote)",
+    company: "AMLINO TECHNOLOGY LIMITED",
+    role: "Software Developer",
+    period: "Jan 2023 - Current",
+    location: "Delhi",
     description: [
-      "Led development of a microservices architecture serving 100K+ daily active users",
-      "Implemented CI/CD pipelines reducing deployment time by 60%",
-      "Mentored junior developers and conducted code reviews",
-      "Collaborated with product team to define technical requirements",
-      "Optimized application performance resulting in 40% faster load times",
+      "Work with the development team to create a reusable angular component for the dashboard",
+      "Designed, developed, created Payment Gateway infrastructure for the ERP Application",
+      "Developed official company website on Next.js",
+      "Designed a specialized API to improve the overall performance of the ERP software, as well as the internal optimization system",
     ],
   },
   {
-    company: "Digital Solutions LLC",
-    role: "Full Stack Developer",
-    period: "2020 - 2022",
-    location: "New York, NY",
+    company: "SUGOI LABS PVT. LIMITED",
+    role: "Software Developer Intern",
+    period: "Jan 2021 - Jun 2021",
+    location: "Bangalore, Karnataka",
     description: [
-      "Developed and maintained multiple client-facing web applications",
-      "Built RESTful APIs and integrated third-party services",
-      "Implemented responsive designs and improved mobile user experience",
-      "Participated in agile development processes and sprint planning",
-      "Reduced bug reports by 30% through comprehensive testing strategies",
-    ],
-  },
-  {
-    company: "StartupXYZ",
-    role: "Frontend Developer",
-    period: "2019 - 2020",
-    location: "Austin, TX",
-    description: [
-      "Created interactive user interfaces using React and TypeScript",
-      "Collaborated with UX designers to implement pixel-perfect designs",
-      "Optimized web applications for performance and accessibility",
-      "Integrated analytics and tracking for user behavior analysis",
-      "Contributed to the company's design system and component library",
-    ],
-  },
-  {
-    company: "Freelance",
-    role: "Web Developer",
-    period: "2018 - 2019",
-    location: "Remote",
-    description: [
-      "Delivered custom web solutions for small to medium businesses",
-      "Managed complete project lifecycle from requirements to deployment",
-      "Built e-commerce platforms and content management systems",
-      "Provided ongoing maintenance and technical support",
-      "Achieved 95% client satisfaction rate with on-time project delivery",
-    ],
-  },
-  {
-    company: "University Research Lab",
-    role: "Research Assistant & Developer",
-    period: "2017 - 2018",
-    location: "Boston, MA",
-    description: [
-      "Developed data visualization tools for academic research projects",
-      "Created automated scripts for data processing and analysis",
-      "Collaborated with researchers to understand technical requirements",
-      "Published findings in peer-reviewed academic journals",
-      "Presented research at national conferences and symposiums",
+      "Developed Project which was aimed at solving logistics for vehicles called GoodsKart",
+      "As part of the Project, I worked on developing several modules using Python as a Backend Programming Language",
+      "Partnered with company mentor to learn best practices in software design",
+      "Handled scripting tasks for debugging and automation using Python",
     ],
   },
 ];

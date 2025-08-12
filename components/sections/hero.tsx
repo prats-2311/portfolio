@@ -60,7 +60,7 @@ export function Hero({ className }: HeroProps) {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-primary via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6"
           >
-            John Doe
+            Prateek Srivastava
           </motion.h1>
 
           {/* Title */}
@@ -70,7 +70,7 @@ export function Hero({ className }: HeroProps) {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground mb-6"
           >
-            Full Stack Developer & AI Enthusiast
+            Full Stack Developer & Product Engineer
           </motion.h2>
 
           {/* Description */}
@@ -80,9 +80,9 @@ export function Hero({ className }: HeroProps) {
             transition={{ duration: 0.6, delay: 1.0 }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed"
           >
-            I craft exceptional digital experiences with modern technologies,
-            specializing in React, Node.js, and AI-powered applications.
-            Let's build something amazing together.
+            I build innovative digital solutions with modern web technologies,
+            specializing in full-stack development, design tools, and educational platforms.
+            Passionate about creating impactful products that solve real-world problems.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -134,7 +134,7 @@ export function Hero({ className }: HeroProps) {
             <motion.a
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              href="https://github.com/johndoe"
+              href="https://github.com/prats-2311"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full border border-border hover:bg-accent hover:text-accent-foreground transition-colors"
@@ -145,7 +145,7 @@ export function Hero({ className }: HeroProps) {
             <motion.a
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              href="https://linkedin.com/in/johndoe"
+              href="https://docker.com/prats2311"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full border border-border hover:bg-accent hover:text-accent-foreground transition-colors"
@@ -156,7 +156,7 @@ export function Hero({ className }: HeroProps) {
             <motion.a
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              href="mailto:john@example.com"
+              href="mailto:prateek.srivastava2311@gmail.com"
               className="p-3 rounded-full border border-border hover:bg-accent hover:text-accent-foreground transition-colors"
             >
               <Mail className="w-6 h-6" />

@@ -114,20 +114,20 @@ export function Contact({ className }: ContactProps) {
     {
       icon: <Mail className="w-6 h-6" />,
       label: "Email",
-      value: "john@example.com",
-      href: "mailto:john@example.com",
+      value: "prateek.srivastava2311@gmail.com",
+      href: "mailto:prateek.srivastava2311@gmail.com",
     },
     {
       icon: <Phone className="w-6 h-6" />,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567",
+      value: "7985684535",
+      href: "tel:+917985684535",
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       label: "Location",
-      value: "San Francisco, CA",
-      href: "https://maps.google.com/?q=San+Francisco,+CA",
+      value: "Delhi, India",
+      href: "https://maps.google.com/?q=Delhi,+India",
     },
   ];
 
@@ -135,17 +135,12 @@ export function Contact({ className }: ContactProps) {
     {
       icon: <Github className="w-6 h-6" />,
       label: "GitHub",
-      href: "https://github.com/johndoe",
+      href: "https://github.com/prats-2311",
     },
     {
       icon: <Linkedin className="w-6 h-6" />,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/johndoe",
-    },
-    {
-      icon: <Twitter className="w-6 h-6" />,
-      label: "Twitter",
-      href: "https://twitter.com/johndoe",
+      href: "https://docker.com/prats2311",
     },
   ];
 

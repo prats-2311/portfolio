@@ -27,6 +27,14 @@ export interface Experience {
   description: string[];
 }
 
+export interface Education {
+  institution: string;
+  degree: string;
+  period: string;
+  location: string;
+  description: string[];
+}
+
 export interface BlogPost {
   title: string;
   excerpt: string;
