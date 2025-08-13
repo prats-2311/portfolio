@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Github, ExternalLink, Calendar, Trophy } from "lucide-react";
 import { HackathonCardProps } from "@/types";
+import Image from 'next/image';
 
 export function HackathonCard({
   name,
@@ -44,11 +45,19 @@ export function HackathonCard({
       className="group overflow-hidden rounded-xl border bg-background/50 backdrop-blur-sm transition-all duration-300 hover:shadow-xl hover:shadow-primary/10"
     >
       <div className="aspect-video overflow-hidden relative">
-        <img
+        {/* <img
           src={image}
           alt={project}
           className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-        />
+        /> */}
+              <Image
+        src={image}
+        alt={project}
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        className="object-cover transition-transform duration-300 group-hover:scale-105"
+        priority={false} // Set to true if this is above the fold
+      />
         {/* Position badge overlay */}
         <div className="absolute top-4 right-4">
           <span

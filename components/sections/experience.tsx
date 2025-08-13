@@ -200,7 +200,7 @@ export function ExperienceSection({ experiences, className }: ExperienceProps) {
             }}
             className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
           >
-            Let's Discuss Opportunities
+            Let&apos;s Discuss Opportunities
           </motion.button>
         </motion.div>
       </div>

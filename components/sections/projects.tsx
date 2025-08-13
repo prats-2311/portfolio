@@ -16,8 +16,8 @@ export function Projects({ projects, className }: ProjectsProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
-  // Get unique categories
-  const categories = ["All", ...Array.from(new Set(projects.map(p => p.category).filter(Boolean)))];
+  // Get unique categories - ensure we only have string values
+  const categories = ["All", ...Array.from(new Set(projects.map(p => p.category).filter((cat): cat is string => Boolean(cat))))];
 
   // Filter projects based on selected category
   const filteredProjects = selectedCategory === "All" 
@@ -251,7 +251,7 @@ export function Projects({ projects, className }: ProjectsProps) {
             className="text-center py-16"
           >
             <p className="text-muted-foreground text-lg">
-              No projects found in the "{selectedCategory}" category.
+              No projects found in the &quot;{selectedCategory}&quot; category.
             </p>
           </motion.div>
         )}
@@ -275,7 +275,7 @@ export function Projects({ projects, className }: ProjectsProps) {
             }}
             className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
           >
-            Let's Work Together
+            Let&apos;s Work Together
           </motion.button>
         </motion.div>
       </div>

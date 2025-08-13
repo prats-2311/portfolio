@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
+import Image from 'next/image';
 import { 
   Moon, 
   Sun, 
@@ -303,11 +304,13 @@ function ProjectCard({ title, description, tech, image, github, demo, featured }
         featured ? "md:col-span-2 md:row-span-2" : ""
       )}
     >
-      <div className="aspect-video overflow-hidden">
-        <img
+      <div className="aspect-video overflow-hidden relative">
+        <Image
           src={image}
           alt={title}
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          fill
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
       <div className="p-6">
@@ -408,11 +411,13 @@ function BlogCard({ title, excerpt, date, readTime, tags, image, link }: BlogCar
       viewport={{ once: true }}
       className="group overflow-hidden rounded-xl border bg-background/50 backdrop-blur-sm transition-all duration-300 hover:shadow-xl"
     >
-      <div className="aspect-video overflow-hidden">
-        <img
+      <div className="aspect-video overflow-hidden relative">
+        <Image
           src={image}
           alt={title}
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          fill
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
       <div className="p-4 sm:p-6">
@@ -465,11 +470,13 @@ function HackathonCard({ name, project, description, position, date, tech, image
       viewport={{ once: true }}
       className="group overflow-hidden rounded-xl border bg-background/50 backdrop-blur-sm transition-all duration-300 hover:shadow-xl"
     >
-      <div className="aspect-video overflow-hidden">
-        <img
+      <div className="aspect-video overflow-hidden relative">
+        <Image
           src={image}
           alt={project}
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          fill
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
       <div className="p-4 sm:p-6">
@@ -663,131 +670,131 @@ function PortfolioWebsite() {
     }
   ];
 
-  const blogs = [
-    {
-      title: "Building Scalable React Applications with TypeScript",
-      excerpt: "Learn how to structure large React applications using TypeScript, best practices for component architecture, and advanced patterns for maintainable code.",
-      date: "Dec 15, 2023",
-      readTime: "8 min",
-      tags: ["React", "TypeScript", "Architecture"],
-      image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=600&fit=crop",
-      link: "#"
-    },
-    {
-      title: "The Future of Web Development: AI and Machine Learning",
-      excerpt: "Exploring how artificial intelligence is revolutionizing web development, from automated testing to intelligent code generation and user experience optimization.",
-      date: "Nov 28, 2023",
-      readTime: "12 min",
-      tags: ["AI", "Machine Learning", "Web Dev"],
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
-      link: "#"
-    },
-    {
-      title: "Optimizing Performance in Modern Web Applications",
-      excerpt: "Deep dive into performance optimization techniques including code splitting, lazy loading, caching strategies, and monitoring tools for better user experience.",
-      date: "Nov 10, 2023",
-      readTime: "10 min",
-      tags: ["Performance", "Optimization", "Web Vitals"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-      link: "#"
-    },
-    {
-      title: "Microservices Architecture: Lessons Learned",
-      excerpt: "Real-world insights from implementing microservices architecture, common pitfalls to avoid, and best practices for distributed systems.",
-      date: "Oct 22, 2023",
-      readTime: "15 min",
-      tags: ["Microservices", "Architecture", "Backend"],
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
-      link: "#"
-    },
-    {
-      title: "CSS Grid vs Flexbox: When to Use What",
-      excerpt: "A comprehensive guide to modern CSS layout techniques, comparing Grid and Flexbox with practical examples and use cases for responsive design.",
-      date: "Oct 5, 2023",
-      readTime: "6 min",
-      tags: ["CSS", "Layout", "Responsive Design"],
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop",
-      link: "#"
-    },
-    {
-      title: "Securing Your Node.js Applications",
-      excerpt: "Essential security practices for Node.js applications including authentication, authorization, data validation, and protection against common vulnerabilities.",
-      date: "Sep 18, 2023",
-      readTime: "11 min",
-      tags: ["Node.js", "Security", "Backend"],
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop",
-      link: "#"
-    }
-  ];
+  // const blogs = [
+  //   {
+  //     title: "Building Scalable React Applications with TypeScript",
+  //     excerpt: "Learn how to structure large React applications using TypeScript, best practices for component architecture, and advanced patterns for maintainable code.",
+  //     date: "Dec 15, 2023",
+  //     readTime: "8 min",
+  //     tags: ["React", "TypeScript", "Architecture"],
+  //     image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=600&fit=crop",
+  //     link: "#"
+  //   },
+  //   {
+  //     title: "The Future of Web Development: AI and Machine Learning",
+  //     excerpt: "Exploring how artificial intelligence is revolutionizing web development, from automated testing to intelligent code generation and user experience optimization.",
+  //     date: "Nov 28, 2023",
+  //     readTime: "12 min",
+  //     tags: ["AI", "Machine Learning", "Web Dev"],
+  //     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
+  //     link: "#"
+  //   },
+  //   {
+  //     title: "Optimizing Performance in Modern Web Applications",
+  //     excerpt: "Deep dive into performance optimization techniques including code splitting, lazy loading, caching strategies, and monitoring tools for better user experience.",
+  //     date: "Nov 10, 2023",
+  //     readTime: "10 min",
+  //     tags: ["Performance", "Optimization", "Web Vitals"],
+  //     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+  //     link: "#"
+  //   },
+  //   {
+  //     title: "Microservices Architecture: Lessons Learned",
+  //     excerpt: "Real-world insights from implementing microservices architecture, common pitfalls to avoid, and best practices for distributed systems.",
+  //     date: "Oct 22, 2023",
+  //     readTime: "15 min",
+  //     tags: ["Microservices", "Architecture", "Backend"],
+  //     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
+  //     link: "#"
+  //   },
+  //   {
+  //     title: "CSS Grid vs Flexbox: When to Use What",
+  //     excerpt: "A comprehensive guide to modern CSS layout techniques, comparing Grid and Flexbox with practical examples and use cases for responsive design.",
+  //     date: "Oct 5, 2023",
+  //     readTime: "6 min",
+  //     tags: ["CSS", "Layout", "Responsive Design"],
+  //     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop",
+  //     link: "#"
+  //   },
+  //   {
+  //     title: "Securing Your Node.js Applications",
+  //     excerpt: "Essential security practices for Node.js applications including authentication, authorization, data validation, and protection against common vulnerabilities.",
+  //     date: "Sep 18, 2023",
+  //     readTime: "11 min",
+  //     tags: ["Node.js", "Security", "Backend"],
+  //     image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop",
+  //     link: "#"
+  //   }
+  // ];
 
-  const hackathons = [
-    {
-      name: "TechCrunch Disrupt 2023",
-      project: "EcoTrack",
-      description: "AI-powered carbon footprint tracking app that helps users reduce their environmental impact through personalized recommendations and gamification.",
-      position: "1st Place",
-      date: "Oct 2023",
-      tech: ["React Native", "Python", "TensorFlow", "Firebase"],
-      image: "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=800&h=600&fit=crop",
-      github: "#",
-      demo: "#"
-    },
-    {
-      name: "NASA Space Apps Challenge",
-      project: "Stellar Navigator",
-      description: "Interactive 3D space exploration platform using real NASA data to visualize celestial bodies and plan space missions.",
-      position: "2nd Place",
-      date: "Sep 2023",
-      tech: ["Three.js", "React", "NASA APIs", "WebGL"],
-      image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=600&fit=crop",
-      github: "#",
-      demo: "#"
-    },
-    {
-      name: "Global Health Hackathon",
-      project: "MediConnect",
-      description: "Telemedicine platform connecting rural patients with healthcare providers, featuring real-time video consultations and AI symptom analysis.",
-      position: "3rd Place",
-      date: "Aug 2023",
-      tech: ["Vue.js", "WebRTC", "Node.js", "MongoDB"],
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=600&fit=crop",
-      github: "#",
-      demo: "#"
-    },
-    {
-      name: "FinTech Innovation Challenge",
-      project: "CryptoLearn",
-      description: "Educational platform for cryptocurrency and blockchain technology with interactive simulations and risk-free trading practice.",
-      position: "Finalist",
-      date: "Jul 2023",
-      tech: ["Next.js", "Blockchain APIs", "Chart.js", "PostgreSQL"],
-      image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop",
-      github: "#",
-      demo: "#"
-    },
-    {
-      name: "Smart City Hackathon",
-      project: "TrafficFlow AI",
-      description: "Machine learning solution for optimizing traffic light timing based on real-time traffic data and pedestrian patterns.",
-      position: "Winner - Best AI Solution",
-      date: "Jun 2023",
-      tech: ["Python", "OpenCV", "TensorFlow", "IoT Sensors"],
-      image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop",
-      github: "#",
-      demo: "#"
-    },
-    {
-      name: "Climate Change Hackathon",
-      project: "GreenCommute",
-      description: "Mobile app that gamifies sustainable transportation choices with rewards, social challenges, and carbon offset tracking.",
-      position: "People's Choice Award",
-      date: "May 2023",
-      tech: ["Flutter", "Firebase", "Google Maps API", "Dart"],
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
-      github: "#",
-      demo: "#"
-    }
-  ];
+  // const hackathons = [
+  //   {
+  //     name: "TechCrunch Disrupt 2023",
+  //     project: "EcoTrack",
+  //     description: "AI-powered carbon footprint tracking app that helps users reduce their environmental impact through personalized recommendations and gamification.",
+  //     position: "1st Place",
+  //     date: "Oct 2023",
+  //     tech: ["React Native", "Python", "TensorFlow", "Firebase"],
+  //     image: "https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=800&h=600&fit=crop",
+  //     github: "#",
+  //     demo: "#"
+  //   },
+  //   {
+  //     name: "NASA Space Apps Challenge",
+  //     project: "Stellar Navigator",
+  //     description: "Interactive 3D space exploration platform using real NASA data to visualize celestial bodies and plan space missions.",
+  //     position: "2nd Place",
+  //     date: "Sep 2023",
+  //     tech: ["Three.js", "React", "NASA APIs", "WebGL"],
+  //     image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=600&fit=crop",
+  //     github: "#",
+  //     demo: "#"
+  //   },
+  //   {
+  //     name: "Global Health Hackathon",
+  //     project: "MediConnect",
+  //     description: "Telemedicine platform connecting rural patients with healthcare providers, featuring real-time video consultations and AI symptom analysis.",
+  //     position: "3rd Place",
+  //     date: "Aug 2023",
+  //     tech: ["Vue.js", "WebRTC", "Node.js", "MongoDB"],
+  //     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=600&fit=crop",
+  //     github: "#",
+  //     demo: "#"
+  //   },
+  //   {
+  //     name: "FinTech Innovation Challenge",
+  //     project: "CryptoLearn",
+  //     description: "Educational platform for cryptocurrency and blockchain technology with interactive simulations and risk-free trading practice.",
+  //     position: "Finalist",
+  //     date: "Jul 2023",
+  //     tech: ["Next.js", "Blockchain APIs", "Chart.js", "PostgreSQL"],
+  //     image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop",
+  //     github: "#",
+  //     demo: "#"
+  //   },
+  //   {
+  //     name: "Smart City Hackathon",
+  //     project: "TrafficFlow AI",
+  //     description: "Machine learning solution for optimizing traffic light timing based on real-time traffic data and pedestrian patterns.",
+  //     position: "Winner - Best AI Solution",
+  //     date: "Jun 2023",
+  //     tech: ["Python", "OpenCV", "TensorFlow", "IoT Sensors"],
+  //     image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop",
+  //     github: "#",
+  //     demo: "#"
+  //   },
+  //   {
+  //     name: "Climate Change Hackathon",
+  //     project: "GreenCommute",
+  //     description: "Mobile app that gamifies sustainable transportation choices with rewards, social challenges, and carbon offset tracking.",
+  //     position: "People's Choice Award",
+  //     date: "May 2023",
+  //     tech: ["Flutter", "Firebase", "Google Maps API", "Dart"],
+  //     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
+  //     github: "#",
+  //     demo: "#"
+  //   }
+  // ];
 
     return (
     <div className="min-h-screen bg-background text-foreground relative">
@@ -819,8 +826,8 @@ function PortfolioWebsite() {
             <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors text-sm lg:text-base">About</a>
             <a href="#skills" className="text-muted-foreground hover:text-foreground transition-colors text-sm lg:text-base">Skills</a>
             <a href="#projects" className="text-muted-foreground hover:text-foreground transition-colors text-sm lg:text-base">Projects</a>
-            <a href="#blogs" className="text-muted-foreground hover:text-foreground transition-colors text-sm lg:text-base">Blogs</a>
-            <a href="#hackathons" className="text-muted-foreground hover:text-foreground transition-colors text-sm lg:text-base">Hackathons</a>
+            {/* <a href="#blogs" className="text-muted-foreground hover:text-foreground transition-colors text-sm lg:text-base">Blogs</a>
+            <a href="#hackathons" className="text-muted-foreground hover:text-foreground transition-colors text-sm lg:text-base">Hackathons</a> */}
             <a href="#experience" className="text-muted-foreground hover:text-foreground transition-colors text-sm lg:text-base">Experience</a>
             <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors text-sm lg:text-base">Contact</a>
             <ThemeToggle />
@@ -828,6 +835,9 @@ function PortfolioWebsite() {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-4">
+
+
+
             <ThemeToggle />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -851,8 +861,8 @@ function PortfolioWebsite() {
                 <a href="#about" className="block text-muted-foreground hover:text-foreground transition-colors">About</a>
                 <a href="#skills" className="block text-muted-foreground hover:text-foreground transition-colors">Skills</a>
                 <a href="#projects" className="block text-muted-foreground hover:text-foreground transition-colors">Projects</a>
-                <a href="#blogs" className="block text-muted-foreground hover:text-foreground transition-colors">Blogs</a>
-                <a href="#hackathons" className="block text-muted-foreground hover:text-foreground transition-colors">Hackathons</a>
+                {/* <a href="#blogs" className="block text-muted-foreground hover:text-foreground transition-colors">Blogs</a>
+                <a href="#hackathons" className="block text-muted-foreground hover:text-foreground transition-colors">Hackathons</a> */}
                 <a href="#experience" className="block text-muted-foreground hover:text-foreground transition-colors">Experience</a>
                 <a href="#contact" className="block text-muted-foreground hover:text-foreground transition-colors">Contact</a>
               </div>
@@ -912,7 +922,7 @@ function PortfolioWebsite() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              I`&apos;`m a passionate full-stack developer with 5+ years of experience building 
+              I&apos;m a passionate full-stack developer with 5+ years of experience building 
               scalable web applications. I love turning complex problems into simple, 
               beautiful designs.
             </p>
@@ -969,7 +979,7 @@ function PortfolioWebsite() {
       </section>
 
       {/* Blogs Section */}
-      <section id="blogs" className="py-20 px-4 bg-muted/30">
+      {/* <section id="blogs" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -990,10 +1000,10 @@ function PortfolioWebsite() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Hackathons Section */}
-      <section id="hackathons" className="py-20 px-4">
+      {/* <section id="hackathons" className="py-20 px-4">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1014,7 +1024,7 @@ function PortfolioWebsite() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Experience Section */}
       <section id="experience" className="py-20 px-4 bg-muted/30">
@@ -1028,7 +1038,7 @@ function PortfolioWebsite() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Work Experience</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              My professional journey and the companies I`&apos;`ve had the pleasure to work with
+              My professional journey and the companies I&apos;ve had the pleasure to work with
             </p>
           </motion.div>
 
@@ -1052,7 +1062,7 @@ function PortfolioWebsite() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-              I`&apos;`m always open to discussing new opportunities and interesting projects
+              I&apos;m always open to discussing new opportunities and interesting projects
             </p>
 
             <div className="flex justify-center gap-6">

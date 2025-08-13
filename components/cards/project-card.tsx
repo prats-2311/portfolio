@@ -1,4 +1,5 @@
 "use client";
+import Image from 'next/image';
 
 import React from "react";
 import { motion } from "framer-motion";
@@ -27,11 +28,13 @@ export function ProjectCard({
         featured ? "md:col-span-2 md:row-span-2" : ""
       )}
     >
-      <div className="aspect-video overflow-hidden">
-        <img
+      <div className="aspect-video overflow-hidden relative">
+        <Image
           src={image}
           alt={title}
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          fill
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
       <div className="p-6">

@@ -50,7 +50,7 @@ export function Hero({ className }: HeroProps) {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-lg md:text-xl text-muted-foreground mb-4"
           >
-            Hello, I'm
+            Hello, I&apos;m
           </motion.p>
 
           {/* Name */}
@@ -145,7 +145,7 @@ export function Hero({ className }: HeroProps) {
             <motion.a
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              href="https://docker.com/prats2311"
+              href="https://www.linkedin.com/in/prateek-srivastava-44b37910b"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full border border-border hover:bg-accent hover:text-accent-foreground transition-colors"

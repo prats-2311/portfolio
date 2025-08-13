@@ -168,7 +168,7 @@ export function Contact({ className }: ContactProps) {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4"
           >
-            Let's Work Together
+            Let&apos;s Work Together
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -178,7 +178,7 @@ export function Contact({ className }: ContactProps) {
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
             Have a project in mind or want to discuss opportunities?
-            I'd love to hear from you. Let's create something amazing together.
+            I&apos;d love to hear from you. Let&apos;s create something amazing together.
           </motion.p>
         </motion.div>
 
@@ -196,7 +196,7 @@ export function Contact({ className }: ContactProps) {
                 Get In Touch
               </h3>
               <p className="text-muted-foreground mb-8">
-                I'm always open to discussing new opportunities, interesting projects,
+                I&apos;m always open to discussing new opportunities, interesting projects,
                 or just having a chat about technology and development.
               </p>
             </div>
@@ -265,7 +265,7 @@ export function Contact({ className }: ContactProps) {
                 className="mb-6 p-4 rounded-lg bg-green-50 border border-green-200 text-green-800 flex items-center gap-2"
               >
                 <CheckCircle className="w-5 h-5" />
-                <span>Message sent successfully! I'll get back to you soon.</span>
+                <span>Message sent successfully! I&apos;ll get back to you soon.</span>
               </motion.div>
             )}
 
@@ -339,7 +339,7 @@ export function Contact({ className }: ContactProps) {
                     "w-full px-4 py-2 border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors",
                     errors.subject ? "border-red-500" : "border-border"
                   )}
-                  placeholder="What's this about?"
+                  placeholder="What&apos;s this about?"
                 />
                 {errors.subject && (
                   <p className="mt-1 text-sm text-red-500">{errors.subject}</p>

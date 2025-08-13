@@ -8,8 +8,6 @@ import {
   Skills,
   Projects,
   ExperienceSection,
-  Blogs,
-  Hackathons,
   Contact
 } from "@/components/sections";
 
@@ -17,8 +15,6 @@ import {
 import { skillsData } from "@/lib/data/skills";
 import { projectsData } from "@/lib/data/projects";
 import { experienceData } from "@/lib/data/experience";
-import { blogsData } from "@/lib/data/blogs";
-import { hackathonsData } from "@/lib/data/hackathons";
 
 export default function Home() {
   return (
@@ -68,24 +64,24 @@ export default function Home() {
         </motion.div>
 
         {/* Blogs Section */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true, margin: "-100px" }}
         >
           <Blogs blogs={blogsData} />
-        </motion.div>
+        </motion.div> */}
 
         {/* Hackathons Section */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true, margin: "-100px" }}
         >
           <Hackathons hackathons={hackathonsData} />
-        </motion.div>
+        </motion.div> */}
 
         {/* Contact Section */}
         <motion.div
