@@ -76,51 +76,13 @@ export {
   getCompaniesWorkedAt,
   getRolesHeld,
 };
-import blogsDataImport, {
-  getBlogsByTag,
-  getRecentBlogs,
-  getAllTags,
-  getBlogsByYear,
-  getTotalReadTime,
-  searchBlogs,
-} from "./data/blogs";
-export {
-  blogsDataImport as blogsData,
-  getBlogsByTag,
-  getRecentBlogs,
-  getAllTags,
-  getBlogsByYear,
-  getTotalReadTime,
-  searchBlogs,
-};
-import hackathonsDataImport, {
-  getWinningHackathons,
-  getHackathonsByYear,
-  getHackathonsByTech,
-  getRecentHackathons,
-  getAllHackathonTechs,
-  getHackathonStats,
-  searchHackathons,
-} from "./data/hackathons";
-export {
-  hackathonsDataImport as hackathonsData,
-  getWinningHackathons,
-  getHackathonsByYear,
-  getHackathonsByTech,
-  getRecentHackathons,
-  getAllHackathonTechs,
-  getHackathonStats,
-  searchHackathons,
-};
+
+
+
+
 
 // Portfolio data collection
-export const portfolioData = {
-  projects: projectsDataImport,
-  skills: skillsDataImport,
-  experience: experienceDataImport,
-  blogs: blogsDataImport,
-  hackathons: hackathonsDataImport,
-};
+
 
 // Data statistics
 export const getPortfolioStats = () => {
@@ -130,9 +92,5 @@ export const getPortfolioStats = () => {
     totalSkills: getTotalSkillsCount(),
     skillCategories: getSkillCategoriesCount(),
     yearsOfExperience: getTotalYearsOfExperience(),
-    totalBlogs: blogsDataImport.length,
-    totalReadTime: getTotalReadTime(),
-    totalHackathons: hackathonsDataImport.length,
-    hackathonWins: getWinningHackathons().length,
   };
 };
