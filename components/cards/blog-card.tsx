@@ -2,17 +2,18 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Clock, Calendar } from "lucide-react";
+import { ArrowRight, Clock, Calendar } from "lucide-react";
 import { BlogCardProps } from "@/types";
+import Link from "next/link";
 
 export function BlogCard({
+  id,
   title,
   excerpt,
   date,
   readTime,
   tags,
   image,
-  link,
 }: BlogCardProps) {
   return (
     <motion.article
@@ -63,15 +64,13 @@ export function BlogCard({
           </span>
         </div>
 
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href={`/blogs/${id}`}
           className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group/link font-medium"
         >
           Read More
-          <ExternalLink className="w-3 h-3 group-hover/link:scale-110 transition-transform" />
-        </a>
+          <ArrowRight className="w-3 h-3 group-hover/link:scale-110 transition-transform" />
+        </Link>
       </div>
     </motion.article>
   );

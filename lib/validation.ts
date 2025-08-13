@@ -75,15 +75,14 @@ export const validateEducation = (
 
 // Blog post validation
 export const validateBlogPost = (blog: Partial<BlogPost>): string | null => {
+  if (typeof blog.id !== "number") return "Blog ID is required and must be a number";
   if (!blog.title?.trim()) return "Blog title is required";
   if (!blog.excerpt?.trim()) return "Blog excerpt is required";
+  if (!blog.content?.trim()) return "Blog content is required";
   if (!blog.date?.trim()) return "Blog date is required";
   if (!blog.readTime?.trim()) return "Read time is required";
   if (!blog.tags?.length) return "At least one tag is required";
   if (!blog.image?.trim()) return "Blog image is required";
-  if (!blog.link?.trim()) return "Blog link is required";
-
-  if (!isValidUrl(blog.link)) return "Invalid blog URL";
 
   return null;
 };

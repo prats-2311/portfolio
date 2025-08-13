@@ -36,13 +36,15 @@ export interface Education {
 }
 
 export interface BlogPost {
+  id: number;
   title: string;
   excerpt: string;
+  content: string;
   date: string;
   readTime: string;
   tags: string[];
   image: string;
-  link: string;
+  link?: string;
 }
 
 export interface Hackathon {
@@ -95,13 +97,13 @@ export interface ExperienceCardProps {
 }
 
 export interface BlogCardProps {
+  id: number;
   title: string;
   excerpt: string;
   date: string;
   readTime: string;
   tags: string[];
   image: string;
-  link: string;
 }
 
 export interface HackathonCardProps {

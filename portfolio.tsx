@@ -811,7 +811,7 @@ function PortfolioWebsite() {
             whileHover={{ scale: 1.05 }}
             className="text-2xl font-bold text-primary"
           >
-            John Doe
+            Prateek Srivastava
           </motion.div>
 
                     {/* Desktop Navigation */}
@@ -912,7 +912,7 @@ function PortfolioWebsite() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              I'm a passionate full-stack developer with 5+ years of experience building 
+              I`&apos;`m a passionate full-stack developer with 5+ years of experience building 
               scalable web applications. I love turning complex problems into simple, 
               beautiful designs.
             </p>
@@ -1004,7 +1004,7 @@ function PortfolioWebsite() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Hackathon Achievements</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Competitive programming events where I've built innovative solutions under time constraints
+              Competitive programming events where I`&apos;`ve built innovative solutions under time constraints
             </p>
           </motion.div>
 
@@ -1028,7 +1028,7 @@ function PortfolioWebsite() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Work Experience</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              My professional journey and the companies I've had the pleasure to work with
+              My professional journey and the companies I`&apos;`ve had the pleasure to work with
             </p>
           </motion.div>
 
@@ -1052,7 +1052,7 @@ function PortfolioWebsite() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-              I'm always open to discussing new opportunities and interesting projects
+              I`&apos;`m always open to discussing new opportunities and interesting projects
             </p>
 
             <div className="flex justify-center gap-6">
@@ -1088,7 +1088,7 @@ function PortfolioWebsite() {
       {/* Footer */}
       <footer className="py-8 px-4 border-t border-border">
         <div className="container mx-auto text-center text-muted-foreground">
-          <p>&copy; 2024 John Doe. All rights reserved.</p>
+          <p>&copy; 2024 Prateek Srivastava. All rights reserved.</p>
         </div>
       </footer>
     </div>

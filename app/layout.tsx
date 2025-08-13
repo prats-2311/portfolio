@@ -12,7 +12,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Prateek Srivastava - Full Stack Developer & Product Engineer",
+    default: "Prateek Srivastava - Full Stack Developer & AI Enthusiast",
     template: "%s | Prateek Srivastava",
   },
   description: "Experienced full-stack developer specializing in React, Node.js, and innovative product development. Building impactful digital solutions with modern technologies.",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "React Developer",
     "Node.js",
     "TypeScript",
-    "Product Engineer",
+    "AI Enthusiast",
     "Web Development",
     "Software Engineer",
     "JavaScript",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://prateeksrivastava.dev",
-    title: "Prateek Srivastava - Full Stack Developer & Product Engineer",
+    title: "Prateek Srivastava - Full Stack Developer & AI Enthusiast",
     description: "Experienced full-stack developer specializing in React, Node.js, and innovative product development.",
     siteName: "Prateek Srivastava Portfolio",
     images: [
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Prateek Srivastava - Full Stack Developer & Product Engineer",
+    title: "Prateek Srivastava - Full Stack Developer & AI Enthusiast",
     description: "Experienced full-stack developer specializing in React, Node.js, and innovative product development.",
     images: ["/og-image.jpg"],
     creator: "@prateeksrivastava",

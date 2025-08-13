@@ -174,7 +174,7 @@ describe("Header Component", () => {
     expect(screen.getByTestId("mobile-menu")).toBeInTheDocument();
 
     // Click inside header (on logo)
-    fireEvent.click(screen.getByText("John Doe"));
+    fireEvent.click(screen.getByText("Prateek Srivastava"));
 
     // Menu should still be open
     expect(screen.getByTestId("mobile-menu")).toBeInTheDocument();

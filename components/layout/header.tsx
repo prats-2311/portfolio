@@ -67,7 +67,7 @@ export default function Header({ isScrolled: propIsScrolled }: HeaderProps) {
           whileHover={{ scale: 1.05 }}
           className="text-2xl font-bold text-primary"
         >
-          John Doe
+          Prateek Srivastava
         </motion.div>
 
         {/* Desktop Navigation */}

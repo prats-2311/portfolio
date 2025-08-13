@@ -221,13 +221,13 @@ export function Blogs({ blogs, className }: BlogsProps) {
                 className="h-full"
               >
                 <BlogCard
+                  id={blog.id}
                   title={blog.title}
                   excerpt={blog.excerpt}
                   date={blog.date}
                   readTime={blog.readTime}
                   tags={blog.tags}
                   image={blog.image}
-                  link={blog.link}
                 />
               </motion.div>
             ))}

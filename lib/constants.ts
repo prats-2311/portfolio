@@ -106,7 +106,7 @@ export const PERFORMANCE_CONFIG = {
 
 // SEO defaults
 export const SEO_DEFAULTS = {
-  title: "John Doe - Portfolio",
+  title: "Prateek Srivastava - Portfolio",
   description: "Full Stack Developer & AI Enthusiast",
   keywords: ["developer", "portfolio", "react", "nextjs", "typescript"],
   image: "/og-image.jpg",
