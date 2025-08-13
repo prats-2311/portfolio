@@ -119,9 +119,9 @@ export const projectsData: Project[] = [
     description:
       "Personal portfolio website built with Next.js, featuring dark mode, smooth animations, responsive design, and comprehensive project showcase.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    image: "/images/projects/portfolio.jpg",
+    image: "/images/projects/portfolio.png",
     github: "https://github.com/prats-2311",
-    demo: "https://prateeksrivastava.dev",
+    demo: "https://prats2311.tech",
     featured: false,
     category: "Web Development",
   },
