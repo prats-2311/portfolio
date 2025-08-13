@@ -108,7 +108,7 @@ export const projectsData: Project[] = [
       "Research",
       "Metaheuristic Algorithms",
     ],
-    image: "/images/projects/edncp.jpg",
+    image: "/edncp.jpg",
     github: "https://github.com/prats-2311",
     demo: "",
     featured: true,
@@ -119,7 +119,7 @@ export const projectsData: Project[] = [
     description:
       "Personal portfolio website built with Next.js, featuring dark mode, smooth animations, responsive design, and comprehensive project showcase.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    image: "/images/projects/portfolio.png",
+    image: "/portfolio.png",
     github: "https://github.com/prats-2311",
     demo: "https://prats2311.tech",
     featured: false,
