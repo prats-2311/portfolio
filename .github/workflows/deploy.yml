@@ -30,6 +30,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: 🧐 Debug Info - See what code is actually running
+        run: |
+          echo "--- Verifying next.config.js ---"
+          cat next.config.js
+          echo ""
+          echo "--- Verifying package.json scripts ---"
+          grep -A 10 '"scripts":' package.json
+          echo ""
+          echo "--------------------------------------"
+        
       - name: Build with Next.js
         run: NEXT_PUBLIC_CUSTOM_DOMAIN=true npm run build
 
