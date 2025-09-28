@@ -17,16 +17,30 @@ export function Projects({ projects, className }: ProjectsProps) {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   // Get unique categories - ensure we only have string values
-  const categories = ["All", ...Array.from(new Set(projects.map(p => p.category).filter((cat): cat is string => Boolean(cat))))];
+  const categories = [
+    "All",
+    ...Array.from(
+      new Set(
+        projects
+          .map((p) => p.category)
+          .filter((cat): cat is string => Boolean(cat))
+      )
+    ),
+  ];
 
   // Filter projects based on selected category
-  const filteredProjects = selectedCategory === "All" 
-    ? projects 
-    : projects.filter(project => project.category === selectedCategory);
+  const filteredProjects =
+    selectedCategory === "All"
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
 
   // Separate featured and regular projects
-  const featuredProjects = filteredProjects.filter(project => project.featured);
-  const regularProjects = filteredProjects.filter(project => !project.featured);
+  const featuredProjects = filteredProjects.filter(
+    (project) => project.featured
+  );
+  const regularProjects = filteredProjects.filter(
+    (project) => !project.featured
+  );
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -195,6 +209,7 @@ export function Projects({ projects, className }: ProjectsProps) {
                     github={project.github}
                     demo={project.demo}
                     featured={project.featured}
+                    videoUrl={project.videoUrl}
                   />
                 </motion.div>
               ))}
@@ -234,6 +249,7 @@ export function Projects({ projects, className }: ProjectsProps) {
                     github={project.github}
                     demo={project.demo}
                     featured={project.featured}
+                    videoUrl={project.videoUrl}
                   />
                 </motion.div>
               ))}

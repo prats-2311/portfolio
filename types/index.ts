@@ -10,6 +10,7 @@ export interface Project {
   demo?: string;
   featured?: boolean;
   category?: string;
+  videoUrl?: string; // YouTube video URL for projects with demo videos
 }
 
 export interface SkillCategory {
@@ -79,6 +80,7 @@ export interface ProjectCardProps {
   github?: string;
   demo?: string;
   featured?: boolean;
+  videoUrl?: string; // YouTube video URL for projects with demo videos
 }
 
 export interface SkillCardProps {

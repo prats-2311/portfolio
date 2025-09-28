@@ -7,19 +7,13 @@ export const projectsData: Project[] = [
     title: "YELPCAMP",
     description:
       "Designed and developed a full stack web app using MERN Stack i.e. MongoDB, Express, React and Node.js for front-end and back-end of the application, deployed through GitHub using content render. The purpose of the project was to create a community of users to rate and leave reviews of campsites and hidden places for your adventures.",
-    tech: [
-      "MongoDB",
-      "Express",
-      "React",
-      "Node.js",
-      "MERN Stack",
-      "GitHub",
-    ],
+    tech: ["MongoDB", "Express", "React", "Node.js", "MERN Stack", "GitHub"],
     image: "/yelcamp.png",
     github: "https://github.com/prats-2311",
     demo: "https://yelpcamp-zoc9.onrender.com/",
     featured: true,
     category: "Web Development",
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Replace with actual demo video
   },
   {
     title: "cseCatalyst: AI-Powered UPSC Preparation Platform",
@@ -44,6 +38,7 @@ export const projectsData: Project[] = [
     demo: "https://csecatalyst.me/",
     featured: true,
     category: "Education",
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Replace with actual demo video
   },
   {
     title: "Global Climate Visualization Platform",
@@ -72,6 +67,7 @@ export const projectsData: Project[] = [
     demo: "https://google-maps-earth.onrender.com/fallback.html",
     featured: true,
     category: "Environmental Tech",
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Replace with actual demo video
   },
   {
     title: "Blood Warriors: Life-Saving Blood Donation Platform",
