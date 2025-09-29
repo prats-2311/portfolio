@@ -16,6 +16,7 @@ export function ProjectCard({
   demo,
   featured = false,
   videoUrl,
+  status = "completed",
 }: ProjectCardProps) {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
@@ -188,14 +189,24 @@ export function ProjectCard({
         </div>
       </div>
 
-      {/* Featured badge */}
-      {featured && (
-        <div className="absolute top-4 right-4">
+      {/* Status and Featured badges */}
+      <div className="absolute top-4 right-4 flex flex-col gap-2">
+        {status === "in-progress" && (
+          <span className="px-2 py-1 text-xs font-medium rounded-full bg-orange-500/90 text-white backdrop-blur-sm">
+            In Progress
+          </span>
+        )}
+        {status === "planned" && (
+          <span className="px-2 py-1 text-xs font-medium rounded-full bg-blue-500/90 text-white backdrop-blur-sm">
+            Planned
+          </span>
+        )}
+        {featured && (
           <span className="px-2 py-1 text-xs font-medium rounded-full bg-primary text-primary-foreground">
             Featured
           </span>
-        </div>
-      )}
+        )}
+      </div>
     </motion.div>
   );
 }

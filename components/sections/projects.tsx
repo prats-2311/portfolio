@@ -210,6 +210,7 @@ export function Projects({ projects, className }: ProjectsProps) {
                     demo={project.demo}
                     featured={project.featured}
                     videoUrl={project.videoUrl}
+                    status={project.status}
                   />
                 </motion.div>
               ))}
@@ -250,6 +251,7 @@ export function Projects({ projects, className }: ProjectsProps) {
                     demo={project.demo}
                     featured={project.featured}
                     videoUrl={project.videoUrl}
+                    status={project.status}
                   />
                 </motion.div>
               ))}

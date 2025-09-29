@@ -11,6 +11,7 @@ export interface Project {
   featured?: boolean;
   category?: string;
   videoUrl?: string; // YouTube video URL for projects with demo videos
+  status?: "completed" | "in-progress" | "planned"; // Project development status
 }
 
 export interface SkillCategory {
@@ -81,6 +82,7 @@ export interface ProjectCardProps {
   demo?: string;
   featured?: boolean;
   videoUrl?: string; // YouTube video URL for projects with demo videos
+  status?: "completed" | "in-progress" | "planned"; // Project development status
 }
 
 export interface SkillCardProps {

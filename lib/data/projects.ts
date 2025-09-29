@@ -4,17 +4,63 @@ import { validateProject } from "@/lib/validation";
 // Projects data based on Prateek Srivastava's detailed project documentation
 export const projectsData: Project[] = [
   {
-    title: "YELPCAMP",
+    title: "StorySign ASL Platform",
     description:
-      "Designed and developed a full stack web app using MERN Stack i.e. MongoDB, Express, React and Node.js for front-end and back-end of the application, deployed through GitHub using content render. The purpose of the project was to create a community of users to rate and leave reviews of campsites and hidden places for your adventures.",
-    tech: ["MongoDB", "Express", "React", "Node.js", "MERN Stack", "GitHub"],
-    image: "/yelcamp.png",
-    github: "https://github.com/prats-2311",
-    demo: "https://yelpcamp-zoc9.onrender.com/",
+      "Revolutionary American Sign Language (ASL) learning platform that bridges the communication gap between deaf and hearing communities through cutting-edge technology. Features three flagship modules: ASL World for interactive story-based learning, Harmony for emotional expression and facial recognition, and Reconnect for therapeutic rehabilitation support. Built with React, FastAPI, MediaPipe computer vision, real-time gesture recognition, AI-powered personalized learning paths, and comprehensive cross-platform accessibility.",
+    tech: [
+      "React 18.2.0",
+      "FastAPI",
+      "MediaPipe",
+      "Electron 27.1.3",
+      "React Native",
+      "WebSocket",
+      "Chart.js",
+      "Tailwind CSS",
+      "Groq API",
+      "OpenAI Integration",
+      "Computer Vision",
+      "TiDB",
+      "SQLAlchemy",
+      "Docker",
+      "Real-time Gesture Recognition",
+    ],
+    image: "/story_sign.png",
+    github: "https://github.com/prats-2311/story_sign.git",
+    demo: "https://storysign.netlify.app/",
     featured: true,
-    category: "Web Development",
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Replace with actual demo video
+    category: "Education",
+    status: "in-progress",
+    // videoUrl: "", // Add video URL when available
   },
+  {
+    title: "AURA - Autonomous User-side Robotic Assistant",
+    description:
+      "Intelligent AI-powered desktop assistant that combines computer vision, natural language processing, and automation to help users interact with their computers through voice commands and visual understanding. Features voice activation with wake word detection, real-time screen analysis, AI reasoning with advanced language models, cross-platform GUI automation, macOS Accessibility API integration, text-to-speech responses, and performance monitoring. Built with Python, PyTorch, OpenAI Whisper, and comprehensive macOS framework bindings.",
+    tech: [
+      "Python 3.11",
+      "PyTorch",
+      "Transformers",
+      "OpenAI Whisper",
+      "Porcupine",
+      "OpenCV",
+      "PyAutoGUI",
+      "PyObjC",
+      "FastAPI",
+      "Computer Vision",
+      "Natural Language Processing",
+      "Voice Recognition",
+      "GUI Automation",
+      "macOS Accessibility API",
+    ],
+    image: "/aura.png",
+    github: "https://github.com/prats-2311/aura.git",
+    demo: "", // No live demo for desktop application
+    featured: true,
+    category: "AI & Automation",
+    videoUrl: "https://youtu.be/PZizPGygSSk",
+    status: "completed",
+  },
+
   {
     title: "cseCatalyst: AI-Powered UPSC Preparation Platform",
     description:
@@ -38,7 +84,8 @@ export const projectsData: Project[] = [
     demo: "https://csecatalyst.me/",
     featured: true,
     category: "Education",
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Replace with actual demo video
+    videoUrl: "https://youtu.be/BNEUC7VparI", // Replace with actual demo video
+    status: "completed",
   },
   {
     title: "Global Climate Visualization Platform",
@@ -67,8 +114,34 @@ export const projectsData: Project[] = [
     demo: "https://google-maps-earth.onrender.com/fallback.html",
     featured: true,
     category: "Environmental Tech",
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Replace with actual demo video
+    videoUrl: "https://youtu.be/BNEUC7VparI", // Replace with actual demo video
+    status: "completed",
   },
+  {
+    title: "Adobe Express Add-on Toolkit",
+    description:
+      "Comprehensive Adobe Express add-on providing professional-grade design tools through three specialized toolkits: Precision & Consistency for advanced alignment and text effects, Content & Project Orchestrator for asset management and bulk content generation, and UI Customizer & Creative Enhancer for pattern generation and custom filters. Features real-time element control, CSV-based bulk operations, customizable quick access toolbar, advanced pattern generators, and custom filter pack creator with live preview capabilities.",
+    tech: [
+      "HTML5",
+      "CSS3",
+      "JavaScript ES6+",
+      "Adobe Express SDK",
+      "Canvas API",
+      "CSV Processing",
+      "Local Storage",
+      "Responsive Design",
+      "Real-time Preview",
+      "Custom UI Components",
+    ],
+    image: "/express.png",
+    github: "https://github.com/prats-2311/express-add-on.git",
+    demo: "", // Adobe Express add-on, no standalone demo
+    featured: true,
+    category: "Design Tools",
+    videoUrl: "https://youtu.be/C3BrRblo6eY",
+    status: "completed",
+  },
+
   {
     title: "Blood Warriors: Life-Saving Blood Donation Platform",
     description:
@@ -90,7 +163,22 @@ export const projectsData: Project[] = [
     github: "https://github.com/prats-2311/blood_warriors.git",
     demo: "http://bloodwarriors.netlify.app",
     featured: true,
+    videoUrl: "https://youtu.be/rsiouPnXos0",
     category: "Healthcare",
+    status: "completed",
+  },
+  {
+    title: "YELPCAMP",
+    description:
+      "Designed and developed a full stack web app using MERN Stack i.e. MongoDB, Express, React and Node.js for front-end and back-end of the application, deployed through GitHub using content render. The purpose of the project was to create a community of users to rate and leave reviews of campsites and hidden places for your adventures.",
+    tech: ["MongoDB", "Express", "React", "Node.js", "MERN Stack", "GitHub"],
+    image: "/yelcamp.png",
+    github: "https://github.com/prats-2311",
+    demo: "https://yelpcamp-zoc9.onrender.com/",
+    featured: true,
+    category: "Web Development",
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Replace with actual demo video
+    status: "completed",
   },
   {
     title: "EDNCP using Artificial Bee Colony Algorithm",
@@ -109,6 +197,7 @@ export const projectsData: Project[] = [
     demo: "",
     featured: true,
     category: "Research",
+    status: "completed",
   },
   {
     title: "Portfolio Website",
@@ -120,6 +209,7 @@ export const projectsData: Project[] = [
     demo: "https://prats2311.tech",
     featured: false,
     category: "Web Development",
+    status: "completed",
   },
 ];
 
