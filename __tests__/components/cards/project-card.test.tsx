@@ -8,6 +8,7 @@ jest.mock("framer-motion", () => ({
   motion: {
     div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
   },
+  AnimatePresence: ({ children }: any) => children,
 }));
 
 const mockProject: ProjectCardProps = {
@@ -38,7 +39,8 @@ describe("ProjectCard", () => {
 
     const image = screen.getByAltText("Test Project");
     expect(image).toBeInTheDocument();
-    expect(image).toHaveAttribute("src", "/test-image.jpg");
+    // Next.js Image component transforms the src, so we check if it contains our image path (URL encoded)
+    expect(image.getAttribute("src")).toContain("%2Ftest-image.jpg");
   });
 
   it("renders GitHub and demo links when provided", () => {
