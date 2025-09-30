@@ -48,25 +48,20 @@ jobs:
       - name: Run tests (if available)
         run: npm test --if-present
 
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
-        if: success()
-        with:
-          name: build-files
-          path: |
-            .next/
-            out/
-            public/
-          retention-days: 30
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        if: github.ref == 'refs/heads/main'
 
-      # Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v4
         if: github.ref == 'refs/heads/main'
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
-          force_orphan: true
+          path: ./out
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        if: github.ref == 'refs/heads/main'
     #
     # For Vercel:
     # - name: Deploy to Vercel
