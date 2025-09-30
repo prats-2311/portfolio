@@ -15,7 +15,7 @@ jest.mock("framer-motion", () => ({
     div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
   },
   useScroll: () => mockUseScroll(),
-  useMotionValueEvent: mockUseMotionValueEvent,
+  useMotionValueEvent: (...args: any[]) => mockUseMotionValueEvent(...args),
 }));
 
 // Mock Navigation component
@@ -53,7 +53,7 @@ describe("Header Component", () => {
   it("renders the logo", () => {
     render(<Header />);
 
-    expect(screen.getByText("John Doe")).toBeInTheDocument();
+    expect(screen.getByText("Prateek Srivastava")).toBeInTheDocument();
   });
 
   it("renders desktop navigation", () => {

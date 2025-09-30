@@ -43,7 +43,8 @@ describe("BlogCard", () => {
 
     const image = screen.getByAltText("Building Scalable React Applications");
     expect(image).toBeInTheDocument();
-    expect(image).toHaveAttribute("src", "/blog-image.jpg");
+    // Next.js Image component transforms the src, so we check if it contains our image path (URL encoded)
+    expect(image.getAttribute("src")).toContain("%2Fblog-image.jpg");
   });
 
   it("renders all tags", () => {

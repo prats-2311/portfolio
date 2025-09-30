@@ -101,13 +101,14 @@ export interface ExperienceCardProps {
 }
 
 export interface BlogCardProps {
-  id: number;
+  id?: number;
   title: string;
   excerpt: string;
   date: string;
   readTime: string;
   tags: string[];
   image: string;
+  link: string;
 }
 
 export interface HackathonCardProps {

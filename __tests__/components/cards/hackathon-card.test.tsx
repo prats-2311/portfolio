@@ -42,7 +42,8 @@ describe("HackathonCard", () => {
 
     const image = screen.getByAltText("EcoTrack");
     expect(image).toBeInTheDocument();
-    expect(image).toHaveAttribute("src", "/hackathon-image.jpg");
+    // Next.js Image component transforms the src, so we check if it contains our image path (URL encoded)
+    expect(image.getAttribute("src")).toContain("%2Fhackathon-image.jpg");
   });
 
   it("renders all technology tags", () => {

@@ -30,11 +30,9 @@ describe("Navigation Components", () => {
     it("renders all navigation items", () => {
       render(<DesktopNavigation />);
 
-      expect(screen.getByText("About")).toBeInTheDocument();
+      expect(screen.getByText("Home")).toBeInTheDocument();
       expect(screen.getByText("Skills")).toBeInTheDocument();
       expect(screen.getByText("Projects")).toBeInTheDocument();
-      expect(screen.getByText("Blogs")).toBeInTheDocument();
-      expect(screen.getByText("Hackathons")).toBeInTheDocument();
       expect(screen.getByText("Experience")).toBeInTheDocument();
       expect(screen.getByText("Contact")).toBeInTheDocument();
     });
@@ -42,15 +40,20 @@ describe("Navigation Components", () => {
     it("has correct href attributes", () => {
       render(<DesktopNavigation />);
 
-      expect(screen.getByText("About")).toHaveAttribute("href", "#about");
+      expect(screen.getByText("Home")).toHaveAttribute("href", "#hero");
       expect(screen.getByText("Skills")).toHaveAttribute("href", "#skills");
       expect(screen.getByText("Projects")).toHaveAttribute("href", "#projects");
+      expect(screen.getByText("Experience")).toHaveAttribute(
+        "href",
+        "#experience"
+      );
+      expect(screen.getByText("Contact")).toHaveAttribute("href", "#contact");
     });
 
     it("applies correct CSS classes", () => {
       render(<DesktopNavigation />);
 
-      const container = screen.getByText("About").parentElement;
+      const container = screen.getByText("Home").parentElement;
       expect(container).toHaveClass("hidden", "md:flex", "items-center");
     });
 
@@ -61,10 +64,10 @@ describe("Navigation Components", () => {
 
       render(<DesktopNavigation />);
 
-      const aboutLink = screen.getByText("About");
-      fireEvent.click(aboutLink);
+      const homeLink = screen.getByText("Home");
+      fireEvent.click(homeLink);
 
-      expect(document.querySelector).toHaveBeenCalledWith("#about");
+      expect(document.querySelector).toHaveBeenCalledWith("#hero");
       expect(mockScrollIntoView).toHaveBeenCalledWith({
         behavior: "smooth",
         block: "start",
@@ -105,9 +108,11 @@ describe("Navigation Components", () => {
     it("renders navigation items when open", () => {
       render(<MobileNavigation isOpen={true} onToggle={mockOnToggle} />);
 
-      expect(screen.getByText("About")).toBeInTheDocument();
+      expect(screen.getByText("Home")).toBeInTheDocument();
       expect(screen.getByText("Skills")).toBeInTheDocument();
       expect(screen.getByText("Projects")).toBeInTheDocument();
+      expect(screen.getByText("Experience")).toBeInTheDocument();
+      expect(screen.getByText("Contact")).toBeInTheDocument();
     });
 
     it("does not render navigation items when closed", () => {
@@ -123,11 +128,11 @@ describe("Navigation Components", () => {
 
       render(<MobileNavigation isOpen={true} onToggle={mockOnToggle} />);
 
-      const aboutLink = screen.getByText("About");
-      fireEvent.click(aboutLink);
+      const homeLink = screen.getByText("Home");
+      fireEvent.click(homeLink);
 
       expect(mockOnToggle).toHaveBeenCalledTimes(1);
-      expect(document.querySelector).toHaveBeenCalledWith("#about");
+      expect(document.querySelector).toHaveBeenCalledWith("#hero");
       expect(mockScrollIntoView).toHaveBeenCalledWith({
         behavior: "smooth",
         block: "start",
@@ -139,7 +144,7 @@ describe("Navigation Components", () => {
     it("renders DesktopNavigation by default", () => {
       render(<Navigation />);
 
-      const container = screen.getByText("About").parentElement;
+      const container = screen.getByText("Home").parentElement;
       expect(container).toHaveClass("hidden", "md:flex");
     });
 
@@ -158,7 +163,7 @@ describe("Navigation Components", () => {
         <Navigation isMobile={true} isOpen={true} onToggle={mockOnToggle} />
       );
 
-      expect(screen.getByText("About")).toBeInTheDocument();
+      expect(screen.getByText("Home")).toBeInTheDocument();
 
       const button = screen.getByRole("button");
       fireEvent.click(button);
