@@ -11,11 +11,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://prats2311.tech"
+  ),
   title: {
     default: "Prateek Srivastava - Full Stack Developer & AI Enthusiast",
     template: "%s | Prateek Srivastava",
   },
-  description: "Experienced full-stack developer specializing in React, Node.js, and innovative product development. Building impactful digital solutions with modern technologies.",
+  description:
+    "Experienced full-stack developer specializing in React, Node.js, and innovative product development. Building impactful digital solutions with modern technologies.",
   keywords: [
     "Full Stack Developer",
     "React Developer",
@@ -33,9 +37,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://prateeksrivastava.dev",
+    url: "/",
     title: "Prateek Srivastava - Full Stack Developer & AI Enthusiast",
-    description: "Experienced full-stack developer specializing in React, Node.js, and innovative product development.",
+    description:
+      "Experienced full-stack developer specializing in React, Node.js, and innovative product development.",
     siteName: "Prateek Srivastava Portfolio",
     images: [
       {
@@ -49,7 +54,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Prateek Srivastava - Full Stack Developer & AI Enthusiast",
-    description: "Experienced full-stack developer specializing in React, Node.js, and innovative product development.",
+    description:
+      "Experienced full-stack developer specializing in React, Node.js, and innovative product development.",
     images: ["/og-image.jpg"],
     creator: "@prateeksrivastava",
   },

@@ -3,16 +3,17 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Github, 
-  Linkedin, 
-  Twitter, 
+import emailjs from "@emailjs/browser";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Github,
+  Linkedin,
+  Youtube,
   Send,
   CheckCircle,
-  AlertCircle
+  AlertCircle,
 } from "lucide-react";
 
 interface ContactProps {
@@ -42,7 +43,9 @@ export function Contact({ className }: ContactProps) {
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -73,7 +76,7 @@ export function Contact({ className }: ContactProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
@@ -82,16 +85,38 @@ export function Contact({ className }: ContactProps) {
     setSubmitStatus("idle");
 
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // In a real application, you would send the form data to your backend
-      console.log("Form submitted:", formData);
-      
+      // EmailJS configuration
+      const serviceId =
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_default";
+      const templateId =
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_default";
+      const publicKey =
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "your_public_key";
+
+      // Template parameters for EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: "prateek.srivastava2311@gmail.com",
+        reply_to: formData.email,
+      };
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
+      );
+
+      console.log("Email sent successfully:", response);
       setSubmitStatus("success");
       setFormData({ name: "", email: "", subject: "", message: "" });
       setErrors({});
     } catch (error) {
+      console.error("Email sending failed:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -102,11 +127,11 @@ export function Contact({ className }: ContactProps) {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    
+    setFormData((prev) => ({ ...prev, [name]: value }));
+
     // Clear error when user starts typing
     if (errors[name as keyof FormErrors]) {
-      setErrors(prev => ({ ...prev, [name]: undefined }));
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
   };
 
@@ -140,7 +165,12 @@ export function Contact({ className }: ContactProps) {
     {
       icon: <Linkedin className="w-6 h-6" />,
       label: "LinkedIn",
-      href: "https://docker.com/prats2311",
+      href: "https://www.linkedin.com/in/prateek-srivastava-44b37910b",
+    },
+    {
+      icon: <Youtube className="w-6 h-6" />,
+      label: "YouTube",
+      href: "https://www.youtube.com/@cseCatalyst",
     },
   ];
 
@@ -177,8 +207,8 @@ export function Contact({ className }: ContactProps) {
             viewport={{ once: true }}
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
-            Have a project in mind or want to discuss opportunities?
-            I&apos;d love to hear from you. Let&apos;s create something amazing together.
+            Have a project in mind or want to discuss opportunities? I&apos;d
+            love to hear from you. Let&apos;s create something amazing together.
           </motion.p>
         </motion.div>
 
@@ -196,8 +226,9 @@ export function Contact({ className }: ContactProps) {
                 Get In Touch
               </h3>
               <p className="text-muted-foreground mb-8">
-                I&apos;m always open to discussing new opportunities, interesting projects,
-                or just having a chat about technology and development.
+                I&apos;m always open to discussing new opportunities,
+                interesting projects, or just having a chat about technology and
+                development.
               </p>
             </div>
 
@@ -208,14 +239,20 @@ export function Contact({ className }: ContactProps) {
                   key={info.label}
                   href={info.href}
                   target={info.href.startsWith("http") ? "_blank" : undefined}
-                  rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  rel={
+                    info.href.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
                   whileHover={{ scale: 1.02, x: 5 }}
                   className="flex items-center gap-4 p-4 rounded-lg border bg-background/50 backdrop-blur-sm hover:bg-accent hover:text-accent-foreground transition-colors"
                 >
                   <div className="text-primary">{info.icon}</div>
                   <div>
                     <div className="font-medium">{info.label}</div>
-                    <div className="text-sm text-muted-foreground">{info.value}</div>
+                    <div className="text-sm text-muted-foreground">
+                      {info.value}
+                    </div>
                   </div>
                 </motion.a>
               ))}
@@ -265,7 +302,9 @@ export function Contact({ className }: ContactProps) {
                 className="mb-6 p-4 rounded-lg bg-green-50 border border-green-200 text-green-800 flex items-center gap-2"
               >
                 <CheckCircle className="w-5 h-5" />
-                <span>Message sent successfully! I&apos;ll get back to you soon.</span>
+                <span>
+                  Message sent successfully! I&apos;ll get back to you soon.
+                </span>
               </motion.div>
             )}
 
@@ -276,14 +315,20 @@ export function Contact({ className }: ContactProps) {
                 className="mb-6 p-4 rounded-lg bg-red-50 border border-red-200 text-red-800 flex items-center gap-2"
               >
                 <AlertCircle className="w-5 h-5" />
-                <span>Failed to send message. Please try again.</span>
+                <span>
+                  Failed to send message. Please check your internet connection
+                  or try again later.
+                </span>
               </motion.div>
             )}
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-foreground mb-2"
+                  >
                     Name *
                   </label>
                   <input
@@ -304,7 +349,10 @@ export function Contact({ className }: ContactProps) {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-foreground mb-2"
+                  >
                     Email *
                   </label>
                   <input
@@ -326,7 +374,10 @@ export function Contact({ className }: ContactProps) {
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+                <label
+                  htmlFor="subject"
+                  className="block text-sm font-medium text-foreground mb-2"
+                >
                   Subject *
                 </label>
                 <input
@@ -339,7 +390,7 @@ export function Contact({ className }: ContactProps) {
                     "w-full px-4 py-2 border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors",
                     errors.subject ? "border-red-500" : "border-border"
                   )}
-                  placeholder="What&apos;s this about?"
+                  placeholder="What's this about?"
                 />
                 {errors.subject && (
                   <p className="mt-1 text-sm text-red-500">{errors.subject}</p>
@@ -347,7 +398,10 @@ export function Contact({ className }: ContactProps) {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-foreground mb-2"
+                >
                   Message *
                 </label>
                 <textarea

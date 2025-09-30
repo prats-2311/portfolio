@@ -2,7 +2,14 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
+import {
+  ArrowDown,
+  Github,
+  Linkedin,
+  Mail,
+  Download,
+  Youtube,
+} from "lucide-react";
 import { HeroBackground } from "../ui/hero-background";
 import { StarField } from "../ui/star-field";
 import { FloatingGeometry } from "../ui/floating-geometry";
@@ -81,8 +88,9 @@ export function Hero({ className }: HeroProps) {
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed"
           >
             I build innovative digital solutions with modern web technologies,
-            specializing in full-stack development, design tools, and educational platforms.
-            Passionate about creating impactful products that solve real-world problems.
+            specializing in full-stack development, design tools, and
+            educational platforms. Passionate about creating impactful products
+            that solve real-world problems.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -151,6 +159,17 @@ export function Hero({ className }: HeroProps) {
               className="p-3 rounded-full border border-border hover:bg-accent hover:text-accent-foreground transition-colors"
             >
               <Linkedin className="w-6 h-6" />
+            </motion.a>
+
+            <motion.a
+              whileHover={{ scale: 1.1, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              href="https://www.youtube.com/@cseCatalyst"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full border border-border hover:bg-accent hover:text-accent-foreground transition-colors"
+            >
+              <Youtube className="w-6 h-6" />
             </motion.a>
 
             <motion.a

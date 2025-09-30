@@ -2,13 +2,14 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { Github, Linkedin, Youtube, Mail } from "lucide-react";
 import Header from "@/components/layout/header";
 import {
   Hero,
   Skills,
   Projects,
   ExperienceSection,
-  Contact
+  Contact,
 } from "@/components/sections";
 
 // Import data
@@ -101,8 +102,52 @@ export default function Home() {
             <div className="text-muted-foreground text-sm">
               © 2024 Prateek Srivastava. All rights reserved.
             </div>
-            <div className="text-muted-foreground text-sm">
-              Built with Next.js, TypeScript, and Tailwind CSS
+            <div className="flex items-center gap-4">
+              <motion.a
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                href="https://github.com/prats-2311"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+                aria-label="GitHub"
+              >
+                <Github className="w-5 h-5" />
+              </motion.a>
+
+              <motion.a
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                href="https://www.linkedin.com/in/prateek-srivastava-44b37910b"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </motion.a>
+
+              <motion.a
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                href="https://www.youtube.com/@cseCatalyst"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+                aria-label="YouTube"
+              >
+                <Youtube className="w-5 h-5" />
+              </motion.a>
+
+              <motion.a
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                href="mailto:prateek.srivastava2311@gmail.com"
+                className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+                aria-label="Email"
+              >
+                <Mail className="w-5 h-5" />
+              </motion.a>
             </div>
           </div>
         </div>
