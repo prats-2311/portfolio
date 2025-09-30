@@ -49,7 +49,7 @@ describe("ThemeToggle", () => {
   });
 
   it("toggles theme when clicked", async () => {
-    localStorageMock.getItem.mockReturnValue(null);
+    localStorageMock.getItem.mockReturnValue("light");
 
     render(<ThemeToggleWithProvider />);
 
@@ -60,11 +60,17 @@ describe("ThemeToggle", () => {
       expect(button).not.toBeDisabled();
     });
 
+    // Clear previous calls from initialization
+    localStorageMock.setItem.mockClear();
+
     // Click to toggle theme
     fireEvent.click(button);
 
     await waitFor(() => {
-      expect(localStorageMock.setItem).toHaveBeenCalled();
+      expect(localStorageMock.setItem).toHaveBeenCalledWith(
+        "portfolio-theme",
+        "dark"
+      );
     });
   });
 
