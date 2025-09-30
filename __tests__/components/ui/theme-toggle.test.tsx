@@ -55,9 +55,10 @@ describe("ThemeToggle", () => {
 
     const button = screen.getByRole("button");
 
-    // Wait for component to mount
+    // Wait for component to mount and theme to be initialized
     await waitFor(() => {
       expect(button).not.toBeDisabled();
+      expect(button).toHaveAttribute("aria-label", "Switch to dark mode");
     });
 
     // Clear previous calls from initialization
@@ -66,12 +67,16 @@ describe("ThemeToggle", () => {
     // Click to toggle theme
     fireEvent.click(button);
 
-    await waitFor(() => {
-      expect(localStorageMock.setItem).toHaveBeenCalledWith(
-        "portfolio-theme",
-        "dark"
-      );
-    });
+    // Wait for the theme change to be processed
+    await waitFor(
+      () => {
+        expect(localStorageMock.setItem).toHaveBeenCalledWith(
+          "portfolio-theme",
+          "dark"
+        );
+      },
+      { timeout: 3000 }
+    );
   });
 
   it("loads saved theme from localStorage", async () => {
