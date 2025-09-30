@@ -1,0 +1,16 @@
+{
+  "name": "Prateek Srivastava - Portfolio",
+  "short_name": "Prateek Portfolio",
+  "description": "Full Stack Developer & AI Enthusiast - Portfolio Website",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ]
+}
