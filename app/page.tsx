@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Youtube, Mail } from "lucide-react";
 import Header from "@/components/layout/header";
@@ -18,13 +18,27 @@ import { projectsData } from "@/lib/data/projects";
 import { experienceData } from "@/lib/data/experience";
 
 export default function Home() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Ensure smooth initial load
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <>
       {/* Header */}
       <Header />
 
       {/* Main Content */}
-      <main className="relative">
+      <main
+        className={`relative ${
+          !isLoaded ? "opacity-0" : "opacity-100"
+        } transition-opacity duration-300`}
+      >
         {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -36,30 +50,30 @@ export default function Home() {
 
         {/* Skills Section */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-50px" }}
         >
           <Skills skills={skillsData} />
         </motion.div>
 
         {/* Projects Section */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-50px" }}
         >
           <Projects projects={projectsData} />
         </motion.div>
 
         {/* Experience Section */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-50px" }}
         >
           <ExperienceSection experiences={experienceData} />
         </motion.div>
@@ -86,10 +100,10 @@ export default function Home() {
 
         {/* Contact Section */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-50px" }}
         >
           <Contact />
         </motion.div>

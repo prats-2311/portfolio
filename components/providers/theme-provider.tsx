@@ -37,25 +37,25 @@ export function ThemeProvider({
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-
-    // Get theme from localStorage or system preference
+    // Get theme from localStorage or system preference immediately
     const savedTheme = localStorage.getItem(storageKey) as Theme | null;
+    let initialTheme = defaultTheme;
 
     if (savedTheme) {
-      setThemeState(savedTheme);
-      applyTheme(savedTheme);
+      initialTheme = savedTheme;
     } else if (enableSystem) {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
+      initialTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
         ? "dark"
         : "light";
-      setThemeState(systemTheme);
-      applyTheme(systemTheme);
-    } else {
-      setThemeState(defaultTheme);
-      applyTheme(defaultTheme);
     }
+
+    setThemeState(initialTheme);
+    applyTheme(initialTheme);
+
+    // Small delay to prevent flash
+    setTimeout(() => {
+      setMounted(true);
+    }, 50);
   }, [defaultTheme, storageKey, enableSystem]);
 
   // Listen for system theme changes

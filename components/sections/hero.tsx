@@ -45,16 +45,16 @@ export function Hero({ className }: HeroProps) {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-20 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
           className="max-w-4xl mx-auto"
         >
           {/* Greeting */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
             className="text-lg md:text-xl text-muted-foreground mb-4"
           >
             Hello, I&apos;m
@@ -62,9 +62,9 @@ export function Hero({ className }: HeroProps) {
 
           {/* Name */}
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-primary via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6"
           >
             Prateek Srivastava
@@ -72,9 +72,9 @@ export function Hero({ className }: HeroProps) {
 
           {/* Title */}
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
             className="text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground mb-6"
           >
             Full Stack Developer & AI Enthusiast
@@ -82,9 +82,9 @@ export function Hero({ className }: HeroProps) {
 
           {/* Description */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.0 }}
+            transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed"
           >
             I build innovative digital solutions with modern web technologies,
@@ -95,9 +95,9 @@ export function Hero({ className }: HeroProps) {
 
           {/* CTA Buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
+            transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
           >
             <motion.button
@@ -134,9 +134,9 @@ export function Hero({ className }: HeroProps) {
 
           {/* Social Links */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.4 }}
+            transition={{ duration: 0.5, delay: 0.7, ease: "easeOut" }}
             className="flex justify-center gap-6"
           >
             <motion.a
@@ -187,7 +187,7 @@ export function Hero({ className }: HeroProps) {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 2.0 }}
+          transition={{ duration: 0.5, delay: 1.0, ease: "easeOut" }}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
           <motion.div

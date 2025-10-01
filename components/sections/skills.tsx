@@ -67,8 +67,8 @@ export function Skills({ skills, className }: SkillsProps) {
             viewport={{ once: true }}
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
-            A comprehensive overview of my technical skills and areas of expertise,
-            from frontend development to AI and machine learning.
+            A comprehensive overview of my technical skills and areas of
+            expertise, from frontend development to AI and machine learning.
           </motion.p>
         </motion.div>
 
@@ -120,7 +120,11 @@ export function Skills({ skills, className }: SkillsProps) {
               className="p-6 rounded-xl border bg-background/50 backdrop-blur-sm"
             >
               <div className="text-3xl font-bold text-primary mb-2">
-                {skills.reduce((total, category) => total + category.skills.length, 0)}+
+                {skills.reduce(
+                  (total, category) => total + category.skills.length,
+                  0
+                )}
+                +
               </div>
               <div className="text-muted-foreground">Technologies</div>
             </motion.div>
@@ -129,7 +133,7 @@ export function Skills({ skills, className }: SkillsProps) {
               whileHover={{ scale: 1.05 }}
               className="p-6 rounded-xl border bg-background/50 backdrop-blur-sm"
             >
-              <div className="text-3xl font-bold text-primary mb-2">5+</div>
+              <div className="text-3xl font-bold text-primary mb-2">3+</div>
               <div className="text-muted-foreground">Years Experience</div>
             </motion.div>
           </div>

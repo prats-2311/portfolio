@@ -16,6 +16,27 @@ export function Projects({ projects, className }: ProjectsProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
+  // Reset to "All" if current category doesn't exist in projects
+  React.useEffect(() => {
+    const availableCategories = Array.from(
+      new Set(
+        projects
+          .map((p) => p.category)
+          .filter(
+            (cat): cat is string =>
+              Boolean(cat) && cat !== undefined && cat.trim() !== ""
+          )
+      )
+    );
+
+    if (
+      selectedCategory !== "All" &&
+      !availableCategories.includes(selectedCategory)
+    ) {
+      setSelectedCategory("All");
+    }
+  }, [projects, selectedCategory]);
+
   // Get unique categories - ensure we only have string values
   const categories = [
     "All",
@@ -23,16 +44,25 @@ export function Projects({ projects, className }: ProjectsProps) {
       new Set(
         projects
           .map((p) => p.category)
-          .filter((cat): cat is string => Boolean(cat))
+          .filter(
+            (cat): cat is string =>
+              Boolean(cat) && cat !== undefined && cat.trim() !== ""
+          )
       )
-    ),
+    ).sort(),
   ];
 
-  // Filter projects based on selected category
-  const filteredProjects =
-    selectedCategory === "All"
-      ? projects
-      : projects.filter((project) => project.category === selectedCategory);
+  // Filter projects based on selected category with better error handling
+  const filteredProjects = React.useMemo(() => {
+    if (selectedCategory === "All") {
+      return projects;
+    }
+    return projects.filter((project) => {
+      return (
+        project.category && project.category.trim() === selectedCategory.trim()
+      );
+    });
+  }, [projects, selectedCategory]);
 
   // Separate featured and regular projects
   const featuredProjects = filteredProjects.filter(
@@ -129,7 +159,10 @@ export function Projects({ projects, className }: ProjectsProps) {
                   key={category}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => setSelectedCategory(category)}
+                  onClick={() => {
+                    setSelectedCategory(category);
+                    setIsFilterOpen(false);
+                  }}
                   className={cn(
                     "px-4 py-2 rounded-lg font-medium transition-colors",
                     selectedCategory === category
@@ -177,102 +210,118 @@ export function Projects({ projects, className }: ProjectsProps) {
         </motion.div>
 
         {/* Featured Projects */}
-        {featuredProjects.length > 0 && (
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="mb-16"
-          >
-            <motion.h3
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-2xl font-semibold text-foreground mb-8"
+        <AnimatePresence mode="wait">
+          {featuredProjects.length > 0 && (
+            <motion.div
+              key={`featured-${selectedCategory}`}
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              className="mb-16"
             >
-              Featured Work
-            </motion.h3>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {featuredProjects.map((project, index) => (
-                <motion.div
-                  key={project.title}
-                  variants={itemVariants}
-                  className="h-full"
-                >
-                  <ProjectCard
-                    title={project.title}
-                    description={project.description}
-                    tech={project.tech}
-                    image={project.image}
-                    github={project.github}
-                    demo={project.demo}
-                    featured={project.featured}
-                    videoUrl={project.videoUrl}
-                    status={project.status}
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        )}
+              <motion.h3
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                className="text-2xl font-semibold text-foreground mb-8"
+              >
+                Featured Work
+              </motion.h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {featuredProjects.map((project, index) => (
+                  <motion.div
+                    key={`${project.title}-${selectedCategory}`}
+                    variants={itemVariants}
+                    className="h-full"
+                  >
+                    <ProjectCard
+                      title={project.title}
+                      description={project.description}
+                      tech={project.tech}
+                      image={project.image}
+                      github={project.github}
+                      demo={project.demo}
+                      featured={project.featured}
+                      videoUrl={project.videoUrl}
+                      status={project.status}
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Regular Projects */}
-        {regularProjects.length > 0 && (
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            <motion.h3
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-2xl font-semibold text-foreground mb-8"
+        <AnimatePresence mode="wait">
+          {regularProjects.length > 0 && (
+            <motion.div
+              key={`regular-${selectedCategory}`}
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
             >
-              Other Projects
-            </motion.h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {regularProjects.map((project, index) => (
-                <motion.div
-                  key={project.title}
-                  variants={itemVariants}
-                  className="h-full"
-                >
-                  <ProjectCard
-                    title={project.title}
-                    description={project.description}
-                    tech={project.tech}
-                    image={project.image}
-                    github={project.github}
-                    demo={project.demo}
-                    featured={project.featured}
-                    videoUrl={project.videoUrl}
-                    status={project.status}
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        )}
+              <motion.h3
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                className="text-2xl font-semibold text-foreground mb-8"
+              >
+                Other Projects
+              </motion.h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {regularProjects.map((project, index) => (
+                  <motion.div
+                    key={`${project.title}-${selectedCategory}`}
+                    variants={itemVariants}
+                    className="h-full"
+                  >
+                    <ProjectCard
+                      title={project.title}
+                      description={project.description}
+                      tech={project.tech}
+                      image={project.image}
+                      github={project.github}
+                      demo={project.demo}
+                      featured={project.featured}
+                      videoUrl={project.videoUrl}
+                      status={project.status}
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* No Projects Message */}
-        {filteredProjects.length === 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center py-16"
-          >
-            <p className="text-muted-foreground text-lg">
-              No projects found in the &quot;{selectedCategory}&quot; category.
-            </p>
-          </motion.div>
-        )}
+        <AnimatePresence mode="wait">
+          {filteredProjects.length === 0 && (
+            <motion.div
+              key={`no-projects-${selectedCategory}`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.6 }}
+              className="text-center py-16"
+            >
+              <p className="text-muted-foreground text-lg">
+                No projects found in the &quot;{selectedCategory}&quot;
+                category.
+              </p>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setSelectedCategory("All")}
+                className="mt-4 px-4 py-2 text-primary hover:text-primary/80 transition-colors"
+              >
+                View All Projects
+              </motion.button>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Call to Action */}
         <motion.div

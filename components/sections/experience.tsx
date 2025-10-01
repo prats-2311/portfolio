@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ExperienceCard } from "../cards/experience-card";
 import { Experience } from "@/types";
 import { cn } from "@/lib/utils";
+import { getTotalYearsOfExperience } from "@/lib/data/experience";
 import { Briefcase, Calendar, MapPin } from "lucide-react";
 
 interface ExperienceProps {
@@ -35,14 +36,8 @@ export function ExperienceSection({ experiences, className }: ExperienceProps) {
     },
   };
 
-  // Calculate total years of experience
-  const currentYear = new Date().getFullYear();
-  const startYears = experiences.map((exp) => {
-    const yearMatch = exp.period.match(/(\d{4})/);
-    return yearMatch ? parseInt(yearMatch[1]) : currentYear;
-  });
-  const earliestYear = Math.min(...startYears);
-  const totalYears = currentYear - earliestYear;
+  // Get total years of experience
+  const totalYears = getTotalYearsOfExperience();
 
   return (
     <section
@@ -125,7 +120,14 @@ export function ExperienceSection({ experiences, className }: ExperienceProps) {
                 <MapPin className="w-8 h-8 text-primary" />
               </div>
               <div className="text-3xl font-bold text-primary mb-2">
-                {new Set(experiences.map(exp => exp.location.split(',')[1]?.trim() || exp.location)).size}
+                {
+                  new Set(
+                    experiences.map(
+                      (exp) =>
+                        exp.location.split(",")[1]?.trim() || exp.location
+                    )
+                  ).size
+                }
               </div>
               <div className="text-muted-foreground">Locations</div>
             </motion.div>
@@ -162,10 +164,12 @@ export function ExperienceSection({ experiences, className }: ExperienceProps) {
               />
 
               {/* Content */}
-              <div className={cn(
-                "w-full md:w-1/2 pl-12 md:pl-0",
-                index % 2 === 0 ? "md:pr-8" : "md:pl-8"
-              )}>
+              <div
+                className={cn(
+                  "w-full md:w-1/2 pl-12 md:pl-0",
+                  index % 2 === 0 ? "md:pr-8" : "md:pl-8"
+                )}
+              >
                 <ExperienceCard
                   company={experience.company}
                   role={experience.role}
