@@ -196,7 +196,7 @@ export const projectsData: Project[] = [
     demo: "https://yelpcamp-zoc9.onrender.com/",
     featured: true,
     category: "Web Development",
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Replace with actual demo video
+    //videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Replace with actual demo video
     status: "completed",
   },
   {
