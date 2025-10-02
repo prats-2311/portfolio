@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | Prateek Srivastava",
   },
   description:
-    "Experienced full-stack developer specializing in React, Node.js, and innovative product development. Building impactful digital solutions with modern technologies.",
+    "Experienced Software developer specializing in React, Node.js, and innovative product development. Building impactful digital solutions with modern technologies.",
   keywords: [
     "Full Stack Developer",
     "React Developer",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     url: "/",
     title: "Prateek Srivastava - Full Stack Developer & AI Enthusiast",
     description:
-      "Experienced full-stack developer specializing in React, Node.js, and innovative product development.",
+      "Experienced Software developer specializing in React, Node.js, and innovative product development.",
     siteName: "Prateek Srivastava Portfolio",
     images: [
       {
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Prateek Srivastava - Full Stack Developer & AI Enthusiast",
     description:
-      "Experienced full-stack developer specializing in React, Node.js, and innovative product development.",
+      "Experienced Software developer specializing in React, Node.js, and innovative product development.",
     images: ["/og-image.jpg"],
     creator: "@prateeksrivastava",
   },

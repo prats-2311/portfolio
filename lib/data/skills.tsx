@@ -18,7 +18,7 @@ export const skillsData: SkillCategory[] = [
     icon: <Code2 className="w-8 h-8" />,
     title: "Programming Languages",
     description:
-      "Proficient in multiple programming languages for full-stack development, AI, and system programming.",
+      "Proficient in multiple programming languages for Software development, AI, and system programming.",
     skills: [
       "TypeScript",
       "JavaScript",

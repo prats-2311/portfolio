@@ -127,7 +127,7 @@ export function Projects({ projects, className }: ProjectsProps) {
             viewport={{ once: true }}
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
-            A showcase of my recent work, featuring full-stack applications,
+            A showcase of my recent work, featuring Software applications,
             AI-powered solutions, and innovative web experiences.
           </motion.p>
         </motion.div>

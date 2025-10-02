@@ -63,7 +63,7 @@ export const projectsData: Project[] = [
   {
     title: "cseCatalyst: AI-Powered UPSC Preparation Platform",
     description:
-      "Revolutionary AI-powered daily study partner for India's 2M+ competitive exam aspirants. Features comprehensive current affairs analysis using Past-Present-Future framework, multi-source synthesis from newspapers and government sources, interactive learning tools with quizzes and flashcards, accessibility features including multi-language support and audio summaries, community forums for peer learning, and Pro subscription model with advanced features. Built with modern full-stack architecture using React, Node.js, Supabase, and integrated with Google Cloud Translation API and ElevenLabs for enhanced user experience.",
+      "Revolutionary AI-powered daily study partner for India's 2M+ competitive exam aspirants. Features comprehensive current affairs analysis using Past-Present-Future framework, multi-source synthesis from newspapers and government sources, interactive learning tools with quizzes and flashcards, accessibility features including multi-language support and audio summaries, community forums for peer learning, and Pro subscription model with advanced features. Built with modern Software architecture using React, Node.js, Supabase, and integrated with Google Cloud Translation API and ElevenLabs for enhanced user experience.",
     tech: [
       "React",
       "Node.js",
@@ -115,7 +115,7 @@ export const projectsData: Project[] = [
   {
     title: "Blood Warriors: Life-Saving Blood Donation Platform",
     description:
-      "Comprehensive digital platform connecting blood donors with patients through intelligent matching based on blood type, location, and urgency. Features real-time blood requests from hospitals, AI-powered CareBot for medical guidance, gamified donation experience with rewards and achievements, emergency SOS requests for critical situations, detailed donor and patient profiles with medical history, and location-based services to find nearby blood banks. Built with modern full-stack architecture ensuring HIPAA-compliant data handling, real-time communication, and mobile-responsive design for accessibility across all devices.",
+      "Comprehensive digital platform connecting blood donors with patients through intelligent matching based on blood type, location, and urgency. Features real-time blood requests from hospitals, AI-powered CareBot for medical guidance, gamified donation experience with rewards and achievements, emergency SOS requests for critical situations, detailed donor and patient profiles with medical history, and location-based services to find nearby blood banks. Built with modern Software architecture ensuring HIPAA-compliant data handling, real-time communication, and mobile-responsive design for accessibility across all devices.",
     tech: [
       "React.js",
       "Node.js",

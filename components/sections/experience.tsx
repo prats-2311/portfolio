@@ -73,7 +73,7 @@ export function ExperienceSection({ experiences, className }: ExperienceProps) {
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
             My journey through various roles and companies, building expertise
-            in full-stack development and leading innovative projects.
+            in Software development and leading innovative projects.
           </motion.p>
         </motion.div>
 

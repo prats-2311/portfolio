@@ -88,9 +88,9 @@ export function Hero({ className }: HeroProps) {
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed"
           >
             I build innovative digital solutions with modern web technologies,
-            specializing in full-stack development, design tools, and
-            educational platforms. Passionate about creating impactful products
-            that solve real-world problems.
+            specializing in Software development, design tools, and educational
+            platforms. Passionate about creating impactful products that solve
+            real-world problems.
           </motion.p>
 
           {/* CTA Buttons */}
