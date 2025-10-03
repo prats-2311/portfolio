@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     canonical: "https://prats2311.tech",
   },
   openGraph: {
-    type: "profile",
+    type: "website",
     locale: "en_US",
     url: "https://prats2311.tech",
     title:
@@ -71,12 +71,6 @@ export const metadata: Metadata = {
         alt: "Prateek Srivastava - Software Developer Portfolio",
       },
     ],
-    profile: {
-      firstName: "Prateek",
-      lastName: "Srivastava",
-      username: "prats2311",
-      gender: "male",
-    },
   },
   twitter: {
     card: "summary_large_image",
