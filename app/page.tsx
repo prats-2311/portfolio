@@ -38,7 +38,37 @@ export default function Home() {
         className={`relative ${
           !isLoaded ? "opacity-0" : "opacity-100"
         } transition-opacity duration-300`}
+        role="main"
+        itemScope
+        itemType="https://schema.org/Person"
       >
+        {/* Hidden SEO Content */}
+        <div className="sr-only">
+          <h1 itemProp="name">Prateek Srivastava - Software Developer</h1>
+          <p itemProp="description">
+            Prateek Srivastava is an experienced Software Developer with 3+
+            years of professional experience specializing in Angular, Next.js,
+            Python, and payment gateway systems. Currently working at Amino
+            Technology Limited in Delhi, India. Previously worked at Sugoi Labs
+            developing logistics optimization solutions.
+          </p>
+          <span itemProp="jobTitle">Software Developer</span>
+          <span
+            itemProp="worksFor"
+            itemScope
+            itemType="https://schema.org/Organization"
+          >
+            <span itemProp="name">Amino Technology Limited</span>
+          </span>
+          <address
+            itemProp="address"
+            itemScope
+            itemType="https://schema.org/PostalAddress"
+          >
+            <span itemProp="addressLocality">Delhi</span>
+            <span itemProp="addressCountry">India</span>
+          </address>
+        </div>
         {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0 }}

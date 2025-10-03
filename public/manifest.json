@@ -1,16 +1,25 @@
 {
-  "name": "Prateek Srivastava - Portfolio",
-  "short_name": "Prateek Portfolio",
-  "description": "Full Stack Developer & AI Enthusiast - Portfolio Website",
+  "name": "Prateek Srivastava - Software Developer | Angular, Next.js, Python Expert",
+  "short_name": "Prateek Srivastava",
+  "description": "Prateek Srivastava is an experienced Software Developer with 3+ years of expertise in Angular, Next.js, Python, and payment systems. Professional portfolio and contact information.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["productivity", "business", "developer"],
   "icons": [
     {
       "src": "/favicon.ico",
       "sizes": "32x32",
       "type": "image/x-icon"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
     }
   ]
 }
