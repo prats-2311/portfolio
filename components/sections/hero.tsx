@@ -77,7 +77,7 @@ export function Hero({ className }: HeroProps) {
             transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
             className="text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground mb-6"
           >
-            Full Stack Developer & AI Enthusiast
+            Software Engineer & AI Enthusiast
           </motion.h2>
 
           {/* Description */}

@@ -107,7 +107,7 @@ export const PERFORMANCE_CONFIG = {
 // SEO defaults
 export const SEO_DEFAULTS = {
   title: "Prateek Srivastava - Portfolio",
-  description: "Full Stack Developer & AI Enthusiast",
+  description: "Software Engineer & AI Enthusiast",
   keywords: ["developer", "portfolio", "react", "nextjs", "typescript"],
   image: "/og-image.jpg",
   twitterCard: "summary_large_image",
