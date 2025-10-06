@@ -165,7 +165,7 @@ export function Contact({ className }: ContactProps) {
     {
       icon: <Linkedin className="w-6 h-6" />,
       label: "LinkedIn",
-      href: "https://www.linkedin.com/in/prateek-srivastava-44b37910b",
+      href: "https://www.linkedin.com/in/prats2311/",
     },
     {
       icon: <Youtube className="w-6 h-6" />,

@@ -104,7 +104,7 @@ export default function AboutPage() {
               collaborating on innovative projects, or sharing knowledge about
               software development. Feel free to reach out through my
               <a
-                href="https://www.linkedin.com/in/prateek-srivastava-44b37910b"
+                href="https://www.linkedin.com/in/prats2311/"
                 className="text-primary hover:underline mx-1"
               >
                 LinkedIn

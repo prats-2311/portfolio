@@ -12,7 +12,7 @@ export function StructuredData() {
     image: "https://prats2311.tech/og-image.jpg",
     sameAs: [
       "https://github.com/prats-2311",
-      "https://www.linkedin.com/in/prateek-srivastava-44b37910b",
+      "https://www.linkedin.com/in/prats2311/",
       "https://www.youtube.com/@cseCatalyst",
     ],
     jobTitle: "Software Developer",

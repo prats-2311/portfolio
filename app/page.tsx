@@ -162,7 +162,7 @@ export default function Home() {
               <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://www.linkedin.com/in/prateek-srivastava-44b37910b"
+                href="https://www.linkedin.com/in/prats2311/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
