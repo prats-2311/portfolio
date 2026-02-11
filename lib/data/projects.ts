@@ -4,9 +4,9 @@ import { validateProject } from "@/lib/validation";
 // Projects data based on Prateek Srivastava's detailed project documentation
 export const projectsData: Project[] = [
   {
-    title: "StorySign ASL Platform",
+    title: "StorySign",
     description:
-      "Revolutionary American Sign Language (ASL) learning platform that bridges the communication gap between deaf and hearing communities through cutting-edge technology. Features three flagship modules: ASL World for interactive story-based learning, Harmony for emotional expression and facial recognition, and Reconnect for therapeutic rehabilitation support. Built with React, FastAPI, MediaPipe computer vision, real-time gesture recognition, AI-powered personalized learning paths, and comprehensive cross-platform accessibility.",
+      "StorySign bridges the gap between clinical care and daily life using Google's multimodal AI that sees, hears, and understands you.",
     tech: [
       "React 18.2.0",
       "FastAPI",
@@ -16,21 +16,21 @@ export const projectsData: Project[] = [
       "WebSocket",
       "Chart.js",
       "Tailwind CSS",
-      "Groq API",
-      "OpenAI Integration",
+      "Gemini 3 ",
+      "Google Cloud",
       "Computer Vision",
-      "TiDB",
+      "PostgreSQL",
       "SQLAlchemy",
       "Docker",
       "Real-time Gesture Recognition",
     ],
     image: "/story_sign.png",
-    github: "https://github.com/prats-2311/story_sign.git",
-    demo: "https://storysign.netlify.app/",
+    github: "https://github.com/prats-2311/story-sign-gemini.git",
+    demo: "https://story-sign.34.56.135.222.nip.io",
     featured: true,
     category: "Education",
-    status: "in-progress",
-    // videoUrl: "", // Add video URL when available
+    status: "completed",
+    videoUrl: "https://youtu.be/o8oqfnlM-ac", // Add video URL when available
   },
   {
     title: "AURA - Autonomous User-side Robotic Assistant",
