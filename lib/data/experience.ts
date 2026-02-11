@@ -4,9 +4,19 @@ import { validateExperience } from "@/lib/validation";
 // Work experience data based on Prateek Srivastava's resume - 3+ years of experience
 export const experienceData: Experience[] = [
   {
+    company: "Freelance",
+    role: "Software Developer",
+    period: "Nov 2025 - Present",
+    location: "Remote, India",
+    description: [
+      "Built a **production-ready marketing site** for [Unisolar](https://unisolarsolutions.com/en) company using Next.js, TypeScript, and Tailwind CSS, with SEO-friendly routing and fully responsive UI",
+      "**Architected full-stack infrastructure**: Developed an internal fintech dashboard for [WisiPay](https://wisipay.com/) using React and Hono (Node.js), implementing role-based auth, REST APIs, and data visualization for transactions and merchants.",
+    ],
+  },
+  {
     company: "Amino Technology Limited",
     role: "Software Developer",
-    period: "Jan 2023 - Present",
+    period: "Jan 2023 - Nov 2025",
     location: "Delhi, India",
     description: [
       "Developed reusable Angular components reducing development time by 40% and improving code maintainability across multiple projects",

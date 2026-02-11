@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Calendar, MapPin } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 import { ExperienceCardProps } from "@/types";
 
 export function ExperienceCard({
@@ -83,9 +84,30 @@ export function ExperienceCard({
               className="flex items-start gap-3 text-sm leading-relaxed"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-primary/60 mt-2 flex-shrink-0" />
-              <span className="hover:text-foreground transition-colors">
-                {item}
-              </span>
+              <div className="hover:text-foreground transition-colors">
+                <ReactMarkdown
+                  components={{
+                    p: ({ children }) => <span>{children}</span>,
+                    a: ({ href, children }) => (
+                      <a
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline"
+                      >
+                        {children}
+                      </a>
+                    ),
+                    strong: ({ children }) => (
+                      <span className="font-semibold text-foreground">
+                        {children}
+                      </span>
+                    ),
+                  }}
+                >
+                  {item}
+                </ReactMarkdown>
+              </div>
             </motion.li>
           ))}
         </motion.ul>
