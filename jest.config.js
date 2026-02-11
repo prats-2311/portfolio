@@ -10,11 +10,17 @@ const customJestConfig = {
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   testEnvironment: "jsdom",
   testPathIgnorePatterns: ["<rootDir>/.next/", "<rootDir>/node_modules/"],
+  moduleNameMapper: {
+    "^react-markdown$": "<rootDir>/__mocks__/react-markdown.js",
+  },
   collectCoverageFrom: [
     "components/**/*.{js,jsx,ts,tsx}",
     "lib/**/*.{js,jsx,ts,tsx}",
     "!**/*.d.ts",
     "!**/node_modules/**",
+  ],
+  transformIgnorePatterns: [
+    "node_modules/(?!(react-markdown|rehype-.*|remark-.*|unist-.*|vfile.*|micromark.*|unified|bail|is-plain-obj|trough|devlop|property-information|space-separated-tokens|comma-separated-tokens|hast-util-whitespace|trim-lines|react-is|katex|github-slugger|refractor)/)",
   ],
 };
 
